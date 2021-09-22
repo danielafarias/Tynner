@@ -38,7 +38,7 @@ namespace To_do
                 Contact = new OpenApiContact
                 {
                     Name = "Bluenitos",
-                    Email = "bluenitos@blue.com",
+                    Email = "venturarocha08@gmail.com",
                     Url = new Uri("https://github.com/danielafarias/Tynner/tree/master/server")
                 },
                 License = new OpenApiLicense
