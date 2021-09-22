@@ -6,11 +6,19 @@ using To_do.Service;
 
 namespace To_do.Controllers
 {
+    /// <summary>
+    /// Classe que gerencia a autorização do usuário
+    /// </summary>
     [Route("api/[controller]"), ApiController]
     public class AuthController : ControllerBase
     {
         AuthService _authservice;
         SqlUsersService _sqlUserService;
+        /// <summary>
+        /// Construtor que gerencia a injeções
+        /// </summary>
+        /// <param name="authservice"></param>
+        /// <param name="sqlUserService"></param>
         public AuthController(AuthService authservice, SqlUsersService sqlUserService)
         {
             _authservice = authservice;
