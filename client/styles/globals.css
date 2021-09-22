@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+header.MuiAppBar-colorPrimary {
+  background-color: #7B9E87;
+}
