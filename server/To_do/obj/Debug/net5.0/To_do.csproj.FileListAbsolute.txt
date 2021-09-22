@@ -168,3 +168,4 @@ C:\Users\ventu\Desktop\Projeto06\Tynner\server\To_do\obj\Debug\net5.0\scopedcss\
 C:\Users\ventu\Desktop\Projeto06\Tynner\server\To_do\obj\Debug\net5.0\To_do.RazorTargetAssemblyInfo.cache
 C:\Users\ventu\Desktop\Projeto06\Tynner\server\To_do\obj\Debug\net5.0\To_do.csproj.CopyComplete
 C:\Users\ventu\Desktop\Projeto06\Tynner\server\To_do\obj\Debug\net5.0\To_do.genruntimeconfig.cache
+C:\Users\ventu\Desktop\Projeto06\Tynner\server\To_do\bin\Debug\net5.0\To_do.xml

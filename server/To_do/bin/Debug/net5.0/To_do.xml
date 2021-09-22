@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>To_do</name>
+    </assembly>
+    <members>
+        <member name="T:To_do.Controllers.AuthController">
+            <summary>
+            Classe que gerencia a autorização do usuário
+            </summary>
+        </member>
+        <member name="M:To_do.Controllers.AuthController.#ctor(To_do.Service.AuthService,To_do.Service.SqlUsersService)">
+            <summary>
+            Construtor que gerencia a injeções
+            </summary>
+            <param name="authservice"></param>
+            <param name="sqlUserService"></param>
+        </member>
+        <member name="M:To_do.Controllers.AuthController.Register(To_do.Models.Users)">
+            <summary>
+            Endpoint que gerencia e é responsável por registrar usuário
+            </summary>
+            <param name="_user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:To_do.Controllers.AuthController.Logger">
+            <summary>
+            Endpoint que gerencia e é reponsável 
+            por retornar o usuário que está logado
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:To_do.Controllers.AuthController.Token(To_do.Models.Users)">
+            <summary>
+            Endpoint que gerencia e é responsável pelo token do usuário
+            </summary>
+            <param name="_user"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
