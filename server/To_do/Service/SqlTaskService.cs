@@ -26,10 +26,10 @@ namespace To_do.Service
                 {
                     exists.Tarefa = t.Tarefa;
                 }
-                if(t.Verificar != null)
-                {
-                    exists.Verificar = t.Verificar;
-                }
+                //if(t.Verificar != null)
+                //{
+                //    exists.Verificar = t.Verificar;
+                //}
 
                 _context.Tarefas.Update(exists);
                 _context.SaveChanges();

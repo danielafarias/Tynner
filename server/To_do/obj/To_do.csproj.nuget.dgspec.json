@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ventu\\Desktop\\Projt_Tynner\\To_do\\To_do\\To_do.csproj": {}
+    "C:\\Users\\ventu\\Desktop\\Projeto06\\Tynner\\server\\To_do\\To_do.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ventu\\Desktop\\Projt_Tynner\\To_do\\To_do\\To_do.csproj": {
+    "C:\\Users\\ventu\\Desktop\\Projeto06\\Tynner\\server\\To_do\\To_do.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ventu\\Desktop\\Projt_Tynner\\To_do\\To_do\\To_do.csproj",
+        "projectUniqueName": "C:\\Users\\ventu\\Desktop\\Projeto06\\Tynner\\server\\To_do\\To_do.csproj",
         "projectName": "To_do",
-        "projectPath": "C:\\Users\\ventu\\Desktop\\Projt_Tynner\\To_do\\To_do\\To_do.csproj",
+        "projectPath": "C:\\Users\\ventu\\Desktop\\Projeto06\\Tynner\\server\\To_do\\To_do.csproj",
         "packagesPath": "C:\\Users\\ventu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ventu\\Desktop\\Projt_Tynner\\To_do\\To_do\\obj\\",
+        "outputPath": "C:\\Users\\ventu\\Desktop\\Projeto06\\Tynner\\server\\To_do\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ventu\\AppData\\Roaming\\NuGet\\NuGet.Config",
