@@ -1,5 +1,5 @@
 import { AppBar, Toolbar, Grid, IconButton } from '@material-ui/core';
-import styles from '../styles/Header.module.scss';
+import styles from '../styles/pages/Header.module.scss';
 
 export default function Header() {
   return (
