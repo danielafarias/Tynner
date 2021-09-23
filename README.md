@@ -33,7 +33,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Você adicionou as seguintes bibliotecas  `<Axios / Material-UI>`.
 * Você leu o `<passo_a_passo_de_intalação_do_projeto>`.
 
-## 🚀 Instalando `<Tynner>`
+## ⏳ Instalando `<Tynner>`
 
 Para instalar o `<Tynner>`, siga estas etapas:
 
@@ -81,7 +81,7 @@ Em seguida, adicione as bibliotecas e dependências necessárias:
 <yarn add next>
 ```
 
-## 🎶 Usando `<Tynner>`
+## 🗒 Usando `<Tynner>`
 
 Para usar `<Tynner>`:
 
@@ -94,7 +94,7 @@ Voilà!
 [http://localhost:3000](http://localhost:3000)
 
 
-## 📫 Contribuindo para `<Tynner>`
+## 🗞 Contribuindo para `<Tynner>`
 
 Para contribuir com `<Tynner>`, siga estas etapas:
 
@@ -139,7 +139,7 @@ Seguintes pessoas que contribuíram para este projeto:
   </tr>
 </table>
 
-## 📝 Licença
+## 📜 Licença
 
 Esse projeto está sob licença ⚖️. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
 
