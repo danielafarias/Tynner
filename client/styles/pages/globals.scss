@@ -1,18 +1,61 @@
-html,
-body {
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yatra+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aclonica&display=swap");
+
+* {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  box-sizing: border-box;
+  font-family: "Yatra One", cursive;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #222222;
+  font-family: "Yatra One", cursive;
+}
+
+body {
+  background-color: #7B9E87;
+    
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: #673ab7;
+ 
 }
 
-* {
-  box-sizing: border-box;
+button.MuiButtonBase-root.MuiButton-root {
+  background-color: #5013bb;
+  border-color: #5013bb;
+  color: #E0E0E0;
+  border-radius: 0.5rem;
+  width: 12rem;
+  margin: 0.5rem auto;
+  font-size: 13px;
+          
+  &:hover {
+    box-shadow: 0px 0px 0px 1px #5013bb;
+    border-color: #5013bb;
+    background-color: #E0E0E0;
+    color: #5013bb;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 header.MuiAppBar-colorPrimary {
