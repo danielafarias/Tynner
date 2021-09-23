@@ -1,72 +1,94 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/pages/Index.module.scss'
+import type { NextPage } from "next";
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/pages/index.module.scss";
+import {
+  Container,
+  Grid,
+  Typography,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+  Button,
+} from "@material-ui/core";
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container}>                                    
       <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Generated by create next app" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Tynner</title>
+        <meta name="Tynner" content="Tynner - Seu planner vintage" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <main>
+        <Container fixed>
+          <Grid container>
+            <Grid item></Grid>
+          </Grid>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
+          <Grid
+            container
+            justifyContent="center"
+            alignItems="center"
+            spacing={4}
           >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+            <Grid item xs={12} sm={8} md={6}>
+              <Grid item className={styles.welcome__header}>
+                <Typography>
+                  <h1>Purple</h1>
+                </Typography>
+              </Grid>
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+              <Grid item xs={12}>
+                <Typography>
+                  <p>
+                    <strong>
+                      Suba de nível em seu conhecimento de programação
+                    </strong>
+                  </p>
+                </Typography>
+              </Grid>
+
+              <Grid item>
+                <Grid item xs={12} sm={8} md={6}>
+                  <Button variant="contained" color="primary">
+                    Inscrever-se
+                  </Button>
+                </Grid>
+
+                <Grid item xs={12} sm={8} md={6}>
+                  <Button variant="contained" color="secondary">
+                    Entrar
+                  </Button>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            <Grid item xs={12} sm={8} md={6}>
+              <img src="new_images/persoicones-24.svg" />
+              <Typography>
+                <h2>Quem somos?</h2>
+              </Typography>
+              <Typography>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
+                  nec dolor ac nisi vehicula porttitor. Duis pharetra quam quis
+                  sapien fermentum sodales. In commodo ex vel egestas euismod.
+                  Morbi scelerisque fringilla metus non molestie. Pellentesque
+                  habitant morbi tristique senectus et netus et malesuada fames
+                  ac turpis egestas.
+                  <br></br>
+                  <br></br>
+                  Cras non enim sed tortor bibendum congue ac lobortis erat.
+                  Curabitur vehicula tristique finibus. Cras tincidunt, sem eu
+                  porta vestibulum, lectus enim convallis ligula, maximus
+                  iaculis lacus nulla accumsan quam. Phasellus pharetra
+                  malesuada elit, id commodo diam aliquam sit amet.
+                </p>
+              </Typography>
+            </Grid>
+          </Grid>
+        </Container>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

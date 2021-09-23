@@ -8,7 +8,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using System.Text;
 using To_do.Data;
 using To_do.Models;
@@ -28,12 +31,33 @@ namespace To_do
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var APIInfo = new OpenApiInfo
+            {
+                Title = "Projeto 06 - Tynner",
+                Description = "Uma API criada para TO-DO list com nossas tarefas diárias",
+                Contact = new OpenApiContact
+                {
+                    Name = "Bluenitos",
+                    Email = "venturarocha08@gmail.com",
+                    Url = new Uri("https://github.com/danielafarias/Tynner/tree/master/server")
+                },
+                License = new OpenApiLicense
+                {
+                    Name = "Licença Tynner",
+                    Url = new Uri("https://github.com/danielafarias/Tynner/tree/master/server")
+                },
+                Version = "v1"
+            };
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "To_do", Version = "v1" });
+                c.SwaggerDoc("v1", APIInfo);
 
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = $"{Path.Combine(AppContext.BaseDirectory, xmlFile)}";
+
+                c.IncludeXmlComments(xmlPath);
 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {

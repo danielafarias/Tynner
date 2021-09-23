@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>To_do</name>
+    </assembly>
+    <members>
+        <member name="T:To_do.Controllers.AuthController">
+            <summary>
+            Classe que gerencia a autorização do usuário
+            </summary>
+        </member>
+        <member name="M:To_do.Controllers.AuthController.#ctor(To_do.Service.AuthService,To_do.Service.SqlUsersService)">
+            <summary>
+            Construtor que gerencia a injeções
+            </summary>
+            <param name="authservice"></param>
+            <param name="sqlUserService"></param>
+        </member>
+        <member name="M:To_do.Controllers.AuthController.Register(To_do.Models.Users)">
+            <summary>
+            Endpoint que gerencia e é responsável por registrar usuário
+            </summary>
+            <param name="_user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:To_do.Controllers.AuthController.Logger">
+            <summary>
+            Endpoint que gerencia e é reponsável 
+            por retornar o usuário que está logado
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:To_do.Controllers.AuthController.Token(To_do.Models.Users)">
+            <summary>
+            Endpoint que gerencia e é responsável pelo token do usuário
+            </summary>
+            <param name="_user"></param>
+            <returns></returns>
+        </member>
+        <member name="T:To_do.Controllers.TasksController">
+            <summary>
+            Classe que gerencia a Task
+            </summary>
+        </member>
+        <member name="M:To_do.Controllers.TasksController.#ctor(To_do.Service.SqlTaskService,To_do.Service.SqlUsersService,To_do.Data.ToDoContext)">
+            <summary>
+            Contrutor que gerencia a injeção 
+            </summary>
+            <param name="service"></param>
+            <param name="userService"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:To_do.Controllers.TasksController.Create(To_do.Models.Tarefas)">
+            <summary>
+            Endpoint que é reponsável por criar a tarefa
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:To_do.Controllers.TasksController.GetAll">
+            <summary>
+            Endpoint que é reponsável por listar as tarefas
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:To_do.Controllers.TasksController.Update(To_do.Models.Tarefas)">
+            <summary>
+            Endpoint que é reponsável por fazer a atualização da tarefa
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:To_do.Controllers.TasksController.Delete(System.Int32)">
+            <summary>
+            Endpoint que é reponsável por deletar a tarefa
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
