@@ -7,7 +7,8 @@
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/danielafarias/Tynner?style=for-the-badge)
 ![Github Watchers](https://img.shields.io/github/watchers/danielafarias/Tynner?style=for-the-badge)
 
-![Tynner](url)
+![tynner](https://user-images.githubusercontent.com/79869120/134448581-54772a03-3a72-4978-8507-450ce437cfeb.png)
+
 
 > Tynner é uma aplicação to-do, simples e de fácil uso, juntando a praticidade atual com o visual retrô.
 
