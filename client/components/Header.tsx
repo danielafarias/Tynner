@@ -13,8 +13,9 @@ export default function Header(props: any) {
             <Grid item>
               {props.searchBar}
             </Grid>
-            <Grid item>
-              {props.buttons}
+            <Grid item className={styles.buttons}>
+              {props.button1}
+              {props.button2}
             </Grid>
           </Grid>
         </Toolbar>
