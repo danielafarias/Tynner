@@ -25,6 +25,24 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [ ] Consumo da API
 - [ ] Projeto Finalizado
 
+## 🧑‍💻 Tecnologias
+
+Front-end:
+
+- Typescript
+- Next.js
+- React  
+- Material-UI
+- Axios
+
+Back-end:
+
+- C#
+- .NET Core
+- EF Core
+- Identity
+- SQL Server
+
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
@@ -116,7 +134,7 @@ Seguintes pessoas que contribuíram para este projeto:
       <a href="https://github.com/danielafarias">
         <img src="https://avatars.githubusercontent.com/u/79869120?v=4" width="100px;" alt="Foto da Daniela Farias no GitHub"/><br>
         <sub>
-          <b>Daniela Farias</b>
+          <b>Daniela Farias [Front-end]</b>
         </sub>
       </a>
     </td>
@@ -124,7 +142,7 @@ Seguintes pessoas que contribuíram para este projeto:
       <a href="https://github.com/marcosdjr">
         <img src="https://avatars.githubusercontent.com/u/81446213?v=4" width="100px;" alt="Foto do Marcos Domingues no GitHub"/><br>
         <sub>
-          <b>Marcos D. Jr.</b>
+          <b>Marcos D. Jr. [Front-end]</b>
         </sub>
       </a>
     </td>
@@ -132,7 +150,7 @@ Seguintes pessoas que contribuíram para este projeto:
       <a href="https://github.com/alexrocha97">
         <img src="https://avatars.githubusercontent.com/u/81331643?v=4" width="100px;" alt="Foto do Alex Rocha no GitHub"/><br>
         <sub>
-          <b>Alex Rocha</b>
+          <b>Alex Rocha [Back-end]</b>
         </sub>
       </a>
     </td>
