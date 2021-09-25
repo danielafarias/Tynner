@@ -45,7 +45,7 @@ export default function Register() {
                   disableUnderline: true,
                 }}
                 variant="filled"
-                type="text"
+                type="email"
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -59,7 +59,7 @@ export default function Register() {
                   disableUnderline: true,
                 }}
                 variant="filled"
-                type="text"
+                type="password"
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
