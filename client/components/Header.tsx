@@ -10,12 +10,16 @@ export default function Header(props: any) {
             <Grid item>
               <img src="images/tynner.svg" className={styles.logoIcon} alt="Logo do site"/>
             </Grid>
-            <Grid item>
-              {props.searchBar}
+            <Grid item >
+              <div className={styles.searchBar}>
+                {props.searchBar}
+              </div>
             </Grid>
-            <Grid item className={styles.buttons}>
-              {props.button1}
-              {props.button2}
+            <Grid item>
+              <div className={styles.buttons}>
+                {props.button1}
+                {props.button2}
+              </div>
             </Grid>
           </Grid>
         </Toolbar>
