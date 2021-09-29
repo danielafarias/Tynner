@@ -2,23 +2,23 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/pages/Index.module.scss";
-import {
-  Container,
-  Grid,
-  Typography,
-  Button,
-  TextField,
-} from "@material-ui/core";
+import Footer from "../components/Footer";
+import { Container, Grid, Typography, Button, TextField } from "@mui/material";
+import React from "react";
 
 const Home: NextPage = () => {
+  const [username, setUsername] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
   return (
-    <div>
+    <div className={styles.all}>
       <Head>
         <title>Tynner</title>
         <meta name="Tynner" content="Tynner - Seu planner vintage" />
       </Head>
 
-      <main>
+      <main id={styles.main}>
         <div className={styles.head}>
           <Grid
             container
@@ -51,37 +51,45 @@ const Home: NextPage = () => {
                   <h1>Login</h1>
                 </Typography>
               </Grid>
-              <Grid item xs={8} sm={4} className={styles.login__form__textField}>
+              <Grid
+                item
+                xs={8}
+                sm={4}
+                className={styles.login__form__textField}
+              >
                 <TextField
-                  className={styles.login__textField__conten}
-                  error={false}
+                  required
                   label="Email"
-                  variant="filled"
                   InputProps={{
                     disableUnderline: true,
                     // endAdornment: <EmailIcon style={ color: '#673ab7', margin: 12 } />,
                   }}
+                  variant="filled"
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={styles.login__textField__conten}
                   fullWidth
-                  // value={email}
-                  type="text"
-                  // onChange={(e) => setEmail(e.target.value)}
                 />
               </Grid>
 
               <Grid item xs={8} sm={4} className={styles.login__textField}>
                 <TextField
-                  className={styles.signUp__textField__content}
-                  // type={values.showPassword ? 'text' : 'password'}
+                  required
                   label="Senha"
-                  variant="filled"
-                  fullWidth
-                  
-                  name="passwordHash"
-                  // value={values.passwordHash}
-                  // onChange={(e) => setPasswordHash(e.target.value) && handleChange}
                   InputProps={{
                     disableUnderline: true,
                   }}
+                  variant="filled"
+                  type="password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className={styles.signUp__textField__content}
+                  // type={values.showPassword ? 'text' : 'password'}
+                  fullWidth
+                  
                 />
               </Grid>
 
@@ -92,14 +100,16 @@ const Home: NextPage = () => {
               </Grid>
 
               <Grid item xs={8} sm={4}>
-                <Typography className={styles.login__link}>
-                  <a href="/signup">Registrar-se</a>
+                <Typography className={styles.login__form__link}>
+                  <a href="/register">Registrar-se</a>
                 </Typography>
               </Grid>
             </Grid>
           </form>
         </div>
+        <div id={styles.footer}></div>
       </main>
+      <Footer />
     </div>
   );
 };

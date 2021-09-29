@@ -1,17 +1,17 @@
 import Header from "../components/Header";
-import { TextField, Typography, Button, Grid } from "@material-ui/core";
+import { TextField, Typography, Button, Grid } from "@mui/material";
 import React from "react";
 import styles from "../styles/pages/Register.module.scss";
 import Footer from "../components/Footer";
 
 export default function Register() {
-  const [username, setUsername] = React.useState("")
-  const [email, setEmail] = React.useState("")
-  const [password, setPassword] = React.useState("")
+  const [username, setUsername] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
   return (
-    <div>
-      <Header />
+    <div className={styles.all}>
       <main className={styles.main}>
+        <Header />
         <form>
           <Grid
             container
@@ -40,7 +40,7 @@ export default function Register() {
             <Grid item>
               <TextField
                 required
-                label="E-mail"
+                label="Email"
                 InputProps={{
                   disableUnderline: true,
                 }}
@@ -71,7 +71,7 @@ export default function Register() {
           </Grid>
         </form>
       </main>
-        <Footer />
+      <Footer />
     </div>
   );
 }
