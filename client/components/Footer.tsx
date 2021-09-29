@@ -1,5 +1,5 @@
-import GitHubIcon from '@material-ui/icons/GitHub';
-import { Typography, Grid } from '@material-ui/core';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import { Typography, Grid } from '@mui/material';
 
 export default function Footer() {
     return (

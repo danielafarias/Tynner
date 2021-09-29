@@ -8,7 +8,7 @@ import {
   Typography,
   Button,
   TextField,
-} from "@material-ui/core";
+} from "@mui/material";
 
 const Home: NextPage = () => {
   return (
@@ -86,7 +86,7 @@ const Home: NextPage = () => {
               </Grid>
 
               <Grid item xs={8} sm={4}>
-                <Button variant="contained" color="primary" type="submit">
+                <Button variant="contained" color="primary" type="submit" sx={{ backgroundColor: "#7B9E87" }}>
                   Entrar
                 </Button>
               </Grid>

@@ -1,5 +1,5 @@
-import AddIcon from '@material-ui/icons/Add';
-import { IconButton } from '@material-ui/core';
+import AddIcon from '@mui/icons-material/Add';
+import { IconButton } from '@mui/material';
 import styles from '../styles/components/Buttons.module.scss';
 
 export default function AddButton() {

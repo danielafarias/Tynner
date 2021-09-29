@@ -5,7 +5,7 @@ import styles from '../styles/pages/Dashboard.module.scss';
 import LogoutButton from '../components/LogoutButton';
 import AddButton from '../components/AddButton';
 import CardTodo from '../components/CardTodo';
-import { Grid } from '@material-ui/core';
+import { Grid } from '@mui/material';
 
 export default function Dashboard() {
     return (
