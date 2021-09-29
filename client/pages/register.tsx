@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import { TextField, Typography, Button, Grid } from "@material-ui/core";
+import { TextField, Typography, Button, Grid } from "@mui/material";
 import React from "react";
 import styles from "../styles/pages/Register.module.scss";
 import Footer from "../components/Footer";
@@ -66,7 +66,7 @@ export default function Register() {
               />
             </Grid>
             <Grid item>
-              <Button type="submit">Confirmar</Button>
+              <Button type="submit" sx={{ backgroundColor: "#7B9E87" }}>Confirmar</Button>
             </Grid>
           </Grid>
         </form>

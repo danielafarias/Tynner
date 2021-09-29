@@ -1,5 +1,5 @@
-import { TextField } from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/Search';
+import { TextField } from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function Search(props: any) {
   return (

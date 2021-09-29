@@ -1,5 +1,5 @@
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import { IconButton } from '@material-ui/core';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import { IconButton } from '@mui/material';
 import styles from '../styles/components/Buttons.module.scss';
 
 export default function LogoutButton() {

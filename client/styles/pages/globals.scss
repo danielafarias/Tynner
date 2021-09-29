@@ -41,9 +41,11 @@ body {
 }
 
 button.MuiButtonBase-root {
-  background-color: #7B9E87;
+  
   font-weight: bold;
   color: #D6F6DD;
+  margin: 0.5rem;
+  padding: 0.5rem;
 }
 
 button.MuiButtonBase-root:hover {
@@ -55,7 +57,6 @@ button.MuiButtonBase-root:hover {
 
 svg.MuiSvgIcon-root {
   color: #3E3433;
-  margin-right: 5px;
 }
 
 p.MuiTypography-root {
