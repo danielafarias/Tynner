@@ -66,7 +66,7 @@ export default function Register() {
               />
             </Grid>
             <Grid item>
-              <Button type="submit">Confirmar</Button>
+              <Button type="submit" sx={{ backgroundColor: "#7B9E87" }}>Confirmar</Button>
             </Grid>
           </Grid>
         </form>

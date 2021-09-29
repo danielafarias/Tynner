@@ -81,13 +81,13 @@ Em seguida, adicione as bibliotecas e dependências necessárias:
 <yarn install>
 ```
 ```
-<yarn add @material-ui/core>
+<yarn add @mui/material>
 ```
 ```
 <yarn add axios>
 ```
 ```
-<yarn add @material-ui/icons>
+<yarn add @mui/icons-material>
 ```
 ```
 <yarn add react>
