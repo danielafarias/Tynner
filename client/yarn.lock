@@ -275,6 +275,7 @@
     react-is "^17.0.2"
     react-transition-group "^4.4.2"
 
+
 "@mui/private-theming@^5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@mui/private-theming/-/private-theming-5.0.1.tgz#50a0ea6ad5a8d1d78072859c4bdaaa6b6584d986"
@@ -299,6 +300,7 @@
   integrity sha512-hCtR2ZVOkoIhpTan02I4UEShnZxe59WwhKRJqauMs/addXByhAHHCNheTdiV++Irl/fyyFObmzPM0CUD3q6FIA==
   dependencies:
     "@babel/runtime" "^7.15.4"
+
     "@emotion/hash" "^0.8.0"
     "@mui/private-theming" "^5.0.1"
     "@mui/types" "^7.0.0"
@@ -330,6 +332,7 @@
     csstype "^3.0.9"
     prop-types "^15.7.2"
 
+
 "@mui/types@^7.0.0":
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/@mui/types/-/types-7.0.0.tgz#a7398502bc9c508875aafcbe28aea599b2c3d203"
@@ -357,17 +360,6 @@
     clsx "^1.1.1"
     lru-cache "^6.0.0"
 
-"@mui/x-data-grid-pro@^5.0.0-beta.2":
-  version "5.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@mui/x-data-grid-pro/-/x-data-grid-pro-5.0.0-beta.2.tgz#b23e7425876e85f355c46f79d1f7ab247177584d"
-  integrity sha512-jPruT3f+fD1YQ9CrznaPjHhyXsBBWmhUT+LmX9LYDjJ/cOFAEqCebBKADT5kJp2ZNlJjUWvgt0uylSUeEbXxjA==
-  dependencies:
-    "@mui/utils" "^5.0.0"
-    "@mui/x-license-pro" "5.0.0-beta.2"
-    clsx "^1.0.4"
-    prop-types "^15.7.2"
-    reselect "^4.0.0"
-
 "@mui/x-data-grid@^5.0.0-beta.2":
   version "5.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@mui/x-data-grid/-/x-data-grid-5.0.0-beta.2.tgz#369fd29c4f29de731b825f0dade7fc3be9ee66fa"
@@ -377,15 +369,6 @@
     clsx "^1.1.1"
     prop-types "^15.7.2"
     reselect "^4.0.0"
-
-"@mui/x-license-pro@5.0.0-beta.2":
-  version "5.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@mui/x-license-pro/-/x-license-pro-5.0.0-beta.2.tgz#7c625c13cae2ea6629711a8ab6f049f2ece118b2"
-  integrity sha512-VxnwhfsB6+YVzhjfuk1yU5ax2CCcIswwVzDVNNYqB0Th8rE6LtYDiJBLEiWPJv6N1w7Ryqlp66eNXzIL8lKn8A==
-  dependencies:
-    "@mui/utils" "^5.0.0"
-    esm "^3.2.25"
-    yargs "^17.0.1"
 
 "@napi-rs/triples@^1.0.3":
   version "1.0.3"
@@ -1014,6 +997,7 @@ classnames@2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
+
 
 cliui@^7.0.2:
   version "7.0.4"
@@ -3840,6 +3824,7 @@ yaml@^1.7.2:
   version "1.10.2"
   resolved "https://registry.yarnpkg.com/yaml/-/yaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
+
 
 yargs-parser@^20.2.2:
   version "20.2.9"

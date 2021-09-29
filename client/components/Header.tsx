@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Grid } from '@mui/material';
+import { AppBar, Toolbar, Grid } from "@mui/material";
 import styles from '../styles/pages/Header.module.scss';
 
 export default function Header(props: any) {
