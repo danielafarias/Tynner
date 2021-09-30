@@ -20,6 +20,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main id={styles.main}>
+        
         <div className={styles.head}>
           <Grid
             container
@@ -109,6 +110,7 @@ const Home: NextPage = () => {
           </form>
         </div>
         <div id={styles.footer}></div>
+        
       </main>
       <Footer />
     </div>

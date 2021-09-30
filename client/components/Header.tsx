@@ -6,8 +6,8 @@ export default function Header(props: any) {
     <header className={styles.grow}>
       <AppBar className={styles.bar} position="fixed">
         <Toolbar>
-          <Grid container justifyContent="space-between" alignItems="center">
-            <Grid item>
+          <Grid  container justifyContent="space-between" >
+            <Grid item className={styles.head}>
               <img src="images/tynner.svg" className={styles.logoIcon} alt="Logo do site"/>
             </Grid>
             <Grid item >

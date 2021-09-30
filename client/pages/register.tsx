@@ -11,14 +11,19 @@ export default function Register() {
   return (
     <div className={styles.all}>
       <main className={styles.main}>
+        <Grid item className={styles.header}>
         <Header />
+        </Grid>
         <form>
           <Grid
+            className={styles.container}
             container
             direction="column"
             justifyContent="center"
             alignItems="center"
             spacing={3}
+            
+
           >
             <Grid item>
               <Typography variant="h5">Registrar-se</Typography>
@@ -30,6 +35,7 @@ export default function Register() {
                 InputProps={{
                   disableUnderline: true,
                 }}
+                fullWidth
                 variant="filled"
                 type="text"
                 name="username"
@@ -44,6 +50,7 @@ export default function Register() {
                 InputProps={{
                   disableUnderline: true,
                 }}
+                fullWidth
                 variant="filled"
                 type="email"
                 name="email"
@@ -58,6 +65,7 @@ export default function Register() {
                 InputProps={{
                   disableUnderline: true,
                 }}
+                fullWidth
                 variant="filled"
                 type="password"
                 name="password"
@@ -66,7 +74,9 @@ export default function Register() {
               />
             </Grid>
             <Grid item>
-              <Button type="submit" sx={{ backgroundColor: "#7B9E87" }}>Confirmar</Button>
+              <Button fullWidth type="submit" sx={{ backgroundColor: "#7B9E87" }}>
+                Confirmar
+              </Button>
             </Grid>
           </Grid>
         </form>
