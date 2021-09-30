@@ -1,6 +1,4 @@
-.main {
-    margin-top: 8rem;
-}
+
 
 .all {
     min-height: 100vh;
@@ -8,4 +6,25 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: space-between;
+
+    .main {
+        margin-top: 8rem;
+
+        .header {
+            align-items: initial;
+            text-align: left;
+        }
+
+    }
+
+}
+
+.container {
+    margin-top: 13vh;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin-top: 1vh;
+    }
 }
