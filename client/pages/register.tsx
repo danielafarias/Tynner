@@ -11,9 +11,7 @@ export default function Register() {
   return (
     <div className={styles.all}>
       <main className={styles.main}>
-        <Grid item className={styles.header}>
         <Header />
-        </Grid>
         <form>
           <Grid
             className={styles.container}

@@ -1,9 +1,10 @@
 import { TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import styles from '../styles/pages/Header.module.scss';
 
 export default function Search(props: any) {
   return (
-    <div>
+    <div className={styles.search}>
       <TextField
         placeholder="Buscar"
         variant="filled"
