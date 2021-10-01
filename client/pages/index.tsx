@@ -57,7 +57,7 @@ const Home: NextPage = () => {
                 item
                 xs={8}
                 sm={4}
-                className={styles.login__form__textField}
+                className={styles.login__textField}
               >
                 <TextField
                   required
@@ -71,7 +71,7 @@ const Home: NextPage = () => {
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className={styles.login__textField__conten}
+                  
                   fullWidth
                 />
               </Grid>
@@ -88,15 +88,14 @@ const Home: NextPage = () => {
                   name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className={styles.signUp__textField__content}
-                  // type={values.showPassword ? 'text' : 'password'}
+                                    // type={values.showPassword ? 'text' : 'password'}
                   fullWidth
                   
                 />
               </Grid>
 
               <Grid item xs={8} sm={4}>
-                <Button variant="contained" color="primary" type="submit" sx={{ backgroundColor: "#7B9E87" }}>
+                <Button className={styles.login__button} variant="contained" color="primary" type="submit" sx={{ backgroundColor: "#7B9E87" }}>
                   Entrar
                 </Button>
               </Grid>

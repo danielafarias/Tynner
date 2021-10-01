@@ -28,3 +28,16 @@
         margin-top: 1vh;
     }
 }
+
+.register {
+    &__textField {
+        width: 30vw;
+        min-width: 300px;
+    }
+
+    &__button {
+        width: 12vw;
+        min-width: 110px;
+    }
+
+}
