@@ -1,9 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/pages/Index.module.scss";
 import Footer from "../components/Footer";
-import { Container, Grid, Typography, Button, TextField } from "@mui/material";
+import { Grid, Typography, Button, TextField } from "@mui/material";
 import React from "react";
 
 

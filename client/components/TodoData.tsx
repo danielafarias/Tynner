@@ -31,11 +31,11 @@ const columns: GridColDef[] = [
 ];
 
 const rows = [
-  { id: 1, todo: "Lavar a louça", priority: 'alta', tag: 'Casa', date: 12-10 },
-  { id: 2, todo: "Lavar a louça", priority: 'alta', tag: 'Casa', date: 12-10 },
-  { id: 3, todo: "Lavar a louça", priority: 'alta', tag: 'Casa', date: 12-10 },
-  { id: 4, todo: "Lavar a louça", priority: 'alta', tag: 'Casa', date: 12-10 },
-  { id: 5, todo: "Lavar a louça", priority: 'alta', tag: 'Casa', date: 12-10 }
+  { id: 1, todo: "Lavar a louça", priority: 'Alta', tag: 'Casa', date: 12-10 },
+  { id: 2, todo: "Lavar a louça", priority: 'Alta', tag: 'Casa', date: 12-10 },
+  { id: 3, todo: "Lavar a louça", priority: 'Alta', tag: 'Casa', date: 12-10 },
+  { id: 4, todo: "Lavar a louça", priority: 'Alta', tag: 'Casa', date: 12-10 },
+  { id: 5, todo: "Lavar a louça", priority: 'Alta', tag: 'Casa', date: 12-10 }
 ];
 
 export default function TodoData() {
