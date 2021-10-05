@@ -149,6 +149,17 @@
 
 .login {
     background-color: #d6f6dd;
+
+    &__textField {
+        width: 30vw;
+        min-width: 300px;
+    }
+
+    &__button {
+        width: 12vw;
+        min-width: 90px;
+    }
+
     &__form {
         margin-top: 3rem;
 

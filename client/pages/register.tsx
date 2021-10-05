@@ -26,7 +26,7 @@ export default function Register() {
             <Grid item>
               <Typography variant="h5">Registrar-se</Typography>
             </Grid>
-            <Grid item>
+            <Grid item className={styles.register__textField}>
               <TextField
                 required
                 label="Nome"
@@ -41,7 +41,7 @@ export default function Register() {
                 onChange={(e) => setUsername(e.target.value)}
               />
             </Grid>
-            <Grid item>
+            <Grid item className={styles.register__textField}>
               <TextField
                 required
                 label="Email"
@@ -56,7 +56,7 @@ export default function Register() {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Grid>
-            <Grid item>
+            <Grid item className={styles.register__textField}>
               <TextField
                 required
                 label="Senha"
@@ -72,7 +72,7 @@ export default function Register() {
               />
             </Grid>
             <Grid item>
-              <Button fullWidth type="submit" sx={{ backgroundColor: "#7B9E87" }}>
+              <Button className={styles.register__button} fullWidth type="submit" sx={{ backgroundColor: "#7B9E87" }}>
                 Confirmar
               </Button>
             </Grid>
