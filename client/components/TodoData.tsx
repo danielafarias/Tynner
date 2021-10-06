@@ -31,14 +31,24 @@ const columns: GridColDef[] = [
 ];
 
 const rows = [
-  { id: 1, todo: "Lavar a louça", priority: 'Alta', tag: 'Casa', date: 12-10 },
-  { id: 2, todo: "Lavar a louça", priority: 'Alta', tag: 'Casa', date: 12-10 },
-  { id: 3, todo: "Lavar a louça", priority: 'Alta', tag: 'Casa', date: 12-10 },
-  { id: 4, todo: "Lavar a louça", priority: 'Alta', tag: 'Casa', date: 12-10 },
-  { id: 5, todo: "Lavar a louça", priority: 'Alta', tag: 'Casa', date: 12-10 }
+  { id: 1, todo: "Lavar a louça", priority: 'Alta', tag: 'Casa', date: "12-10-2021" },
+  { id: 2, todo: "Lavar a louça", priority: 'Alta', tag: 'Casa', date: "12-10-2021" },
+  { id: 3, todo: "Lavar a louça", priority: 'Alta', tag: 'Casa', date: "12-10-2021" },
+  { id: 4, todo: "Lavar a louça", priority: 'Alta', tag: 'Casa', date: "12-10-2021" },
+  { id: 5, todo: "Lavar a louça", priority: 'Alta', tag: 'Casa', date: "12-10-2021" }
 ];
 
 export default function TodoData() {
+  const [select, setSelect] = React.useState([]);
+
+  const handleRowSelection = (e: any) => {
+    setSelect(e.map((ri: any) => rows[ri]))
+  }
+
+  React.useEffect(() => {
+    console.log(select);
+  }, [select]);
+
   return (
     <div style={{ height: 400, width: '100%' }}>
       <DataGrid
@@ -48,6 +58,7 @@ export default function TodoData() {
         rowsPerPageOptions={[5]}
         checkboxSelection
         disableSelectionOnClick
+        onSelectionModelChange={handleRowSelection}
       />
     </div>
   );
