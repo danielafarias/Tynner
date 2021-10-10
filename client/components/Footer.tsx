@@ -4,10 +4,17 @@ import styles from "../styles/Footer.module.scss";
 
 export default function Footer() {
   return (
-    <footer>
-      <Grid container flexDirection="row" justifyContent="center">
-        <Grid item className={styles.footer}>
+    <footer className={styles.footer}>
+      <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Grid item>
           <GitHubIcon />
+        </Grid>
+        <Grid item>
           <Typography>
             Acesse o repositório no GitHub <a>aqui</a>
           </Typography>
