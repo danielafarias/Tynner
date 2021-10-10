@@ -1,4 +1,4 @@
-#### Copyright © 2021 Daniela Cristina de Farias, Marcos Domingues Junior e Alex Rocha
+#### Copyright © 2021 Daniela Cristina de Farias, Marcos Domingues Junior, Alex Rocha e Caio Espíndola
 ##
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
