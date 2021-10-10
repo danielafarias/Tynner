@@ -111,3 +111,13 @@ input[type="date"],
 textarea {
   background-color: white;
 }
+
+div.MuiDataGrid-root .MuiDataGrid-columnHeaderTitle {
+  font-weight: 700;
+  color: #3e3433;
+}
+
+div.MuiDataGrid-root .MuiDataGrid-row.Mui-selected {
+  text-decoration: line-through;
+  color: #6A2E35;
+}
