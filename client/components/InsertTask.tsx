@@ -6,7 +6,7 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import styles from "../styles/pages/InsertTask.module.scss";
+import styles from "../styles/InsertTask.module.scss";
 import Autocomplete from "@mui/material/Autocomplete";
 import { styled } from "@mui/material/styles";
 import { Grid, TextField, Paper } from "@mui/material";
@@ -49,10 +49,6 @@ export default function FormDialog() {
         <DialogTitle>Nova Tarefa</DialogTitle>
         <DialogContent>
           <div className={styles.content}>
-          
-            
-
-          
             <TextField
               className={styles.field}
               required
@@ -85,7 +81,6 @@ export default function FormDialog() {
               //onChange={(e) => setDate(e.target.value)}
               defaultValue="2021-01-01"
               fullWidth
-
             />
 
             <Autocomplete

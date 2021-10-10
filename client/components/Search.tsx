@@ -1,6 +1,6 @@
-import { TextField } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
-import styles from '../styles/pages/Header.module.scss';
+import { TextField } from "@mui/material";
+import SearchIcon from "@mui/icons-material/Search";
+import styles from "../styles/Header.module.scss";
 
 export default function Search(props: any) {
   return (

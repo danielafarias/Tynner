@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import styles from "../styles/pages/Index.module.scss";
+import styles from "../styles/Index.module.scss";
 import Footer from "../components/Footer";
 import { Grid, Typography, Button, TextField } from "@mui/material";
 import React from "react";
-
 
 const Home: NextPage = () => {
   const [username, setUsername] = React.useState("");
@@ -19,7 +18,6 @@ const Home: NextPage = () => {
       </Head>
 
       <main id={styles.main}>
-        
         <div className={styles.head}>
           <Grid
             container
@@ -52,12 +50,7 @@ const Home: NextPage = () => {
                   <h1>Login</h1>
                 </Typography>
               </Grid>
-              <Grid
-                item
-                xs={8}
-                sm={4}
-                className={styles.login__textField}
-              >
+              <Grid item xs={8} sm={4} className={styles.login__textField}>
                 <TextField
                   required
                   label="Email"
@@ -70,7 +63,6 @@ const Home: NextPage = () => {
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  
                   fullWidth
                 />
               </Grid>
@@ -87,14 +79,19 @@ const Home: NextPage = () => {
                   name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                                    // type={values.showPassword ? 'text' : 'password'}
+                  // type={values.showPassword ? 'text' : 'password'}
                   fullWidth
-                  
                 />
               </Grid>
 
               <Grid item xs={8} sm={4}>
-                <Button className={styles.login__button} variant="contained" color="primary" type="submit" sx={{ backgroundColor: "#7B9E87" }}>
+                <Button
+                  className={styles.login__button}
+                  variant="contained"
+                  color="primary"
+                  type="submit"
+                  sx={{ backgroundColor: "#7B9E87" }}
+                >
                   Entrar
                 </Button>
               </Grid>
@@ -108,7 +105,6 @@ const Home: NextPage = () => {
           </form>
         </div>
         <div id={styles.footer}></div>
-        
       </main>
       <Footer />
     </div>

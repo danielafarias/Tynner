@@ -1,18 +1,37 @@
 import Header from "../components/Header";
 import { TextField, Typography, Button, Grid } from "@mui/material";
 import React from "react";
-import styles from "../styles/pages/Register.module.scss";
+import styles from "../styles/Register.module.scss";
 import Footer from "../components/Footer";
+import { register } from "../api/Api";
+import { useRouter } from "next/router";
 
 export default function Register() {
-  const [username, setUsername] = React.useState("");
+  const router = useRouter();
+
+  const [error, setError] = React.useState(false);
+
+  const [userName, setUserName] = React.useState("");
   const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [passwordHash, setPasswordHash] = React.useState("");
+
+  const submitHandler = async (event: any) => {
+    event.preventDefault();
+
+    try {
+      await register(userName, email, passwordHash);
+      router.push("/");
+    } catch (err) {
+      console.error(err);
+      setError(true);
+    }
+  };
+
   return (
     <div className={styles.all}>
       <main className={styles.main}>
         <Header />
-        <form>
+        <form onSubmit={submitHandler}>
           <Grid
             className={styles.container}
             container
@@ -20,8 +39,6 @@ export default function Register() {
             justifyContent="center"
             alignItems="center"
             spacing={3}
-            
-
           >
             <Grid item>
               <Typography variant="h5">Registrar-se</Typography>
@@ -29,7 +46,7 @@ export default function Register() {
             <Grid item className={styles.register__textField}>
               <TextField
                 required
-                label="Nome"
+                label="Usuário"
                 InputProps={{
                   disableUnderline: true,
                 }}
@@ -37,8 +54,8 @@ export default function Register() {
                 variant="filled"
                 type="text"
                 name="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
               />
             </Grid>
             <Grid item className={styles.register__textField}>
@@ -67,12 +84,17 @@ export default function Register() {
                 variant="filled"
                 type="password"
                 name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={passwordHash}
+                onChange={(e) => setPasswordHash(e.target.value)}
               />
             </Grid>
             <Grid item>
-              <Button className={styles.register__button} fullWidth type="submit" sx={{ backgroundColor: "#7B9E87" }}>
+              <Button
+                className={styles.register__button}
+                fullWidth
+                type="submit"
+                sx={{ backgroundColor: "#7B9E87" }}
+              >
                 Confirmar
               </Button>
             </Grid>
