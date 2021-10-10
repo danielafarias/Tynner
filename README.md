@@ -154,6 +154,14 @@ Seguintes pessoas que contribuíram para este projeto:
         </sub>
       </a>
     </td>
+        <td align="center">
+      <a href="https://github.com/kylelionegds">
+        <img src="https://avatars.githubusercontent.com/u/72888708?v=4" width="100px;" alt="Foto do Caio Espíndola no GitHub"/><br>
+        <sub>
+          <b>Caio Espíndola [Back-end]</b>
+        </sub>
+      </a>
+    </td>
   </tr>
 </table>
 

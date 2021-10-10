@@ -1,26 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap");
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
 }
 
-h2, h3 {
-  color: #3E3433;
-  font-family: 'Lora', serif;
+h2,
+h3 {
+  color: #3e3433;
+  font-family: "Lora", serif;
 }
 
 h1 {
-  font-weight:100;
+  font-weight: 100;
 }
 
 h5.MuiTypography-h5 {
-  color: #3E3433;
-  font-family: 'Lora', serif;
+  color: #3e3433;
+  font-family: "Lora", serif;
 }
 
 footer {
@@ -29,21 +29,20 @@ footer {
 }
 
 label.MuiFormLabel-root.Mui-focused {
-  color: #3E3433;
+  color: #3e3433;
 }
 
 input.MuiInputBase-input {
-  color: #3E3433;
+  color: #3e3433;
 }
 
 body {
-  background-color: #D6F6DD;
-    
+  background-color: #d6f6dd;
 }
 
 button.MuiButtonBase-root {
   font-weight: bold;
-  color: #D6F6DD;
+  color: #d6f6dd;
   margin: 0.5rem;
   padding: 0.5rem;
 }
@@ -51,20 +50,19 @@ button.MuiButtonBase-root {
 button.MuiButtonBase-root:hover {
   background-color: #7b9e87a4;
   font-weight: bold;
-  font-family: 'Barlow', sans-serif;
-  color: #D6F6DD;
+  font-family: "Barlow", sans-serif;
+  color: #d6f6dd;
 }
 
 svg.MuiSvgIcon-root {
-  color: #3E3433;
+  color: #3e3433;
 }
 
 p.MuiTypography-root {
-  color: #3E3433;
+  color: #3e3433;
 }
 
-p.MuiTypography-root a{
-  
+p.MuiTypography-root a {
   cursor: pointer;
 }
 
@@ -93,9 +91,8 @@ input.MuiFilledInput-input {
 }
 
 div.MuiPaper-root {
-  background-color: #D6F6DD;
+  background-color: #d6f6dd;
 }
-
 
 input.MuiInputBase-input {
   max-width: 40vw;
@@ -105,14 +102,12 @@ div.MuiGrid-root {
   flex-wrap: nowrap;
 }
 
-input[type="date"], textarea {
-
-  background-color : white; 
-  
+input[type="date"],
+textarea {
+  background-color: white;
 }
 
-input[type="date"], textarea {
-
-  background-color : white; 
-  
+input[type="date"],
+textarea {
+  background-color: white;
 }
