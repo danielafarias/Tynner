@@ -20,10 +20,15 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Identidade visual
 - [x] Logo
 - [x] Protótipo no Figma
-- [ ] Endpoints
+- [x] Endpoints
 - [ ] Views
 - [ ] Consumo da API
 - [ ] Projeto Finalizado
+
+## 🔗 Acesso aos repositórios
+
+[Front-end](https://github.com/danielafarias/Tynner)
+[Back-end](https://github.com/alexrocha97/Api_Tynner)
 
 ## 🧑‍💻 Tecnologias
 
