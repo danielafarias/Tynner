@@ -9,7 +9,20 @@ import DialogTitle from "@mui/material/DialogTitle";
 import styles from "../styles/InsertTask.module.scss";
 import Autocomplete from "@mui/material/Autocomplete";
 import { styled } from "@mui/material/styles";
-import { Grid, TextField, Paper } from "@mui/material";
+import { Grid, TextField, Paper, MenuItem } from "@mui/material";
+
+const tags = [
+  { value: "Casa", label: "Casa" },
+  { value: "Lazer", label: "Lazer" },
+  { value: "Pessoal", label: "Pessoal" },
+  { value: "Trabalho", label: "Trabalho" },
+];
+
+const priorities = [
+  { value: "Alta", label: "Alta" },
+  { value: "Média", label: "Média" },
+  { value: "Baixa", label: "Baixa" },
+];
 
 export default function FormDialog() {
   const TynnerDialog = styled(Dialog)(({ theme }) => ({
@@ -31,28 +44,32 @@ export default function FormDialog() {
     setOpen(false);
   };
 
-  const priority = [{ label: "Alta" }, { label: "Média" }, { label: "Baixa" }];
+  const [tag, setTag] = React.useState("Casa");
 
-  const tag = [
-    { label: "Casa" },
-    { label: "Lazer" },
-    { label: "Pessoal" },
-    { label: "Trabalho" },
-  ];
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTag(event.target.value);
+  };
+
+  const [priority, setPriority] = React.useState("Alta");
+
+  const handleChangeP = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPriority(event.target.value);
+  };
 
   return (
     <div>
       <Button variant="outlined" onClick={handleClickOpen}>
         Open form dialog
       </Button>
-      <TynnerDialog open={open} onClose={handleClose}>
+      <TynnerDialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
         <DialogTitle>Nova Tarefa</DialogTitle>
-        <DialogContent>
+        <DialogContent >
           <div className={styles.content}>
             <TextField
-              className={styles.field}
               required
-              label="task"
+              margin="dense"
+              //className={styles.field}
+              label="Tarefa"
               InputProps={{
                 disableUnderline: true,
               }}
@@ -65,14 +82,16 @@ export default function FormDialog() {
             />
 
             <TextField
-              className={styles.field}
+              //className={styles.field}
+              margin="dense"
               required
-              label="data"
+              label="Data"
               InputProps={{
                 disableUnderline: true,
               }}
               InputLabelProps={{
                 shrink: true,
+                backgroundColor: "blue",
               }}
               variant="filled"
               type="date"
@@ -83,33 +102,59 @@ export default function FormDialog() {
               fullWidth
             />
 
-            <Autocomplete
-              className={styles.field}
-              disablePortal
-              id="combo-box-priority"
-              options={priority}
-              sx={{ width: 300 }}
-              renderInput={(params) => (
-                <TextField {...params} label="Prioridade" />
-              )}
+            <TextField
+              select
+              margin="dense"
+              //className={styles.field}
+              label="Tag"
+              InputProps={{
+                disableUnderline: true,
+              }}
+              value={tag}
+              onChange={handleChange}
+              variant="filled"
               fullWidth
-              disableClearable
-            />
+            >
+              {tags.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
 
-            <Autocomplete
-              className={styles.field}
-              disablePortal
-              id="combo-box-tag"
-              options={tag}
-              sx={{ width: 300 }}
-              renderInput={(params) => <TextField {...params} label="tag" />}
+            <TextField
+            margin="dense"
+              id="filled-select-currency"
+              select
+              //className={styles.field}
+              label="Priority"
+              InputProps={{
+                disableUnderline: true,
+              }}
+              value={priority}
+              onChange={handleChangeP}
+              variant="filled"
               fullWidth
-              disableClearable
-            />
+            >
+              {priorities.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
           </div>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Confirmar</Button>
+        <DialogActions >
+          <Button
+            onClick={handleClose}
+            className={styles.login__button}
+            variant="contained"
+            color="primary"
+            type="submit"
+            sx={{ backgroundColor: "#7B9E87" }}
+          >
+            Confirmar
+          </Button>
         </DialogActions>
       </TynnerDialog>
     </div>

@@ -6,3 +6,10 @@
   display: flex;
   flex-direction: column;
 }
+
+.login {
+  &__button {
+    width: 12vw;
+    min-width: 120px;
+  }
+}

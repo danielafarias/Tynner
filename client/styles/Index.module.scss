@@ -122,19 +122,23 @@
 }
 
 @media (max-width: 600px) {
+  
+ 
   .grid {
     width: 100%;
     flex-direction: column;
   }
 
-  .login {
+  .login__textField {
+    
+    
     background-color: #d6f6dd;
 
-    &__textField {
-      width: 340vw;
-      min-width: 300px;
+    
+      width: 3vw;
+      min-width: px;
       height: 1000px;
-    }
+    
   }
 }
 
