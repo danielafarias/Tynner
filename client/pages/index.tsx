@@ -4,11 +4,34 @@ import styles from "../styles/Index.module.scss";
 import Footer from "../components/Footer";
 import { Grid, Typography, Button, TextField } from "@mui/material";
 import React from "react";
+import { login } from "../api/Api";
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
-  const [username, setUsername] = React.useState("");
+
   const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [passwordHash, setPasswordHash] = React.useState("");
+
+  const router = useRouter();
+
+  const [error, setError] = React.useState(false);
+
+  const submitHandler = async (event: any) => {
+    event.preventDefault();
+
+    try {
+      await login(email, passwordHash).then((response: any) => {
+        localStorage.setItem("token", response.data);
+        console.log(response)
+      });
+      router.push("/dashboard");
+    } catch (err) {
+      console.error(err);
+      setError(true);
+    }
+  };
+
+  console.log(email, passwordHash)
 
   return (
     <div className={styles.all}>
@@ -37,7 +60,7 @@ const Home: NextPage = () => {
         </div>
 
         <div className={styles.login}>
-          <form className={styles.login__form}>
+          <form onSubmit={submitHandler} className={styles.login__form}>
             <Grid
               container
               direction="column"
@@ -64,7 +87,7 @@ const Home: NextPage = () => {
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  inputStyle ={{width: '100%'}}
+                  // inputStyle={{width: '100%'}}
 
                   fullWidth
                 />
@@ -80,9 +103,9 @@ const Home: NextPage = () => {
                   }}
                   variant="filled"
                   type="password"
-                  name="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  name="passwordHash"
+                  value={passwordHash}
+                  onChange={(e) => setPasswordHash(e.target.value)}
                   fullWidth
                   // type={values.showPassword ? 'text' : 'password'}
                 />
