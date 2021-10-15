@@ -25,14 +25,6 @@ const priorities = [
 ];
 
 export default function FormDialog() {
-  const TynnerDialog = styled(Dialog)(({ theme }) => ({
-    "& .MuiDialogContent-root": {
-      padding: theme.spacing(2),
-    },
-    "& .MuiDialogActions-root": {
-      padding: theme.spacing(1),
-    },
-  }));
 
   const [open, setOpen] = React.useState(false);
 
@@ -61,7 +53,7 @@ export default function FormDialog() {
       <Button variant="outlined" onClick={handleClickOpen}>
         Open form dialog
       </Button>
-      <TynnerDialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
+      <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
         <DialogTitle>Nova Tarefa</DialogTitle>
         <DialogContent >
           <div className={styles.content}>
@@ -90,8 +82,7 @@ export default function FormDialog() {
                 disableUnderline: true,
               }}
               InputLabelProps={{
-                shrink: true,
-                backgroundColor: "blue",
+                shrink: true
               }}
               variant="filled"
               type="date"
@@ -156,7 +147,7 @@ export default function FormDialog() {
             Confirmar
           </Button>
         </DialogActions>
-      </TynnerDialog>
+      </Dialog>
     </div>
   );
 }
