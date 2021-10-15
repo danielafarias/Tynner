@@ -8,6 +8,10 @@
 }
 
 .login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
   &__button {
     width: 12vw;
     min-width: 120px;
