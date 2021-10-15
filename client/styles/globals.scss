@@ -23,6 +23,10 @@ h5.MuiTypography-h5 {
   font-family: "Lora", serif;
 }
 
+h2.MuiTypography-root {
+  font-family: "Lora", serif;
+}
+
 footer {
   margin-top: 4rem;
   opacity: 0.8;
@@ -34,6 +38,7 @@ label.MuiFormLabel-root.Mui-focused {
 
 input.MuiInputBase-input {
   color: #3e3433;
+  width: 100%;
 }
 
 body {
@@ -94,23 +99,16 @@ div.MuiPaper-root {
   background-color: #d6f6dd;
 }
 
-input.MuiInputBase-input {
-  max-width: 40vw;
-}
+//input.MuiInputBase-input {
+//  max-width: 0vw;
+//}
 
 div.MuiGrid-root {
   flex-wrap: nowrap;
 }
 
-input[type="date"],
-textarea {
-  background-color: white;
-}
 
-input[type="date"],
-textarea {
-  background-color: white;
-}
+
 
 div.MuiDataGrid-root .MuiDataGrid-columnHeaderTitle {
   font-weight: 700;
@@ -120,4 +118,10 @@ div.MuiDataGrid-root .MuiDataGrid-columnHeaderTitle {
 div.MuiDataGrid-root .MuiDataGrid-row.Mui-selected {
   text-decoration: line-through;
   color: #6A2E35;
+}
+
+div.MuiDialogActions-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

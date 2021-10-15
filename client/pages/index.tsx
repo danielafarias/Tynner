@@ -45,7 +45,7 @@ const Home: NextPage = () => {
               alignItems="center"
               spacing={3}
             >
-              <Grid item xs={8} sm={4} className={styles.login__form__title}>
+              <Grid item xs={8} sm={4} className={styles.login__form__title} >
                 <Typography>
                   <h1>Login</h1>
                 </Typography>
@@ -56,6 +56,7 @@ const Home: NextPage = () => {
                   label="Email"
                   InputProps={{
                     disableUnderline: true,
+                    fullWidth: true,
                     // endAdornment: <EmailIcon style={ color: '#673ab7', margin: 12 } />,
                   }}
                   variant="filled"
@@ -63,6 +64,8 @@ const Home: NextPage = () => {
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  inputStyle ={{width: '100%'}}
+
                   fullWidth
                 />
               </Grid>
@@ -73,14 +76,15 @@ const Home: NextPage = () => {
                   label="Senha"
                   InputProps={{
                     disableUnderline: true,
+                   
                   }}
                   variant="filled"
                   type="password"
                   name="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  // type={values.showPassword ? 'text' : 'password'}
                   fullWidth
+                  // type={values.showPassword ? 'text' : 'password'}
                 />
               </Grid>
 
