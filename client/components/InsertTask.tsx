@@ -9,8 +9,10 @@ import DialogTitle from "@mui/material/DialogTitle";
 import styles from "../styles/InsertTask.module.scss";
 import Autocomplete from "@mui/material/Autocomplete";
 import { styled } from "@mui/material/styles";
-import { Grid, TextField, Paper, MenuItem } from "@mui/material";
+import { Grid, TextField, Paper, MenuItem, IconButton } from "@mui/material";
 import { postTask } from "../api/Api";
+import AddTaskIcon from '@mui/icons-material/AddTask';
+
 
 const tags = [
   { value: "Casa", label: "Casa" },
@@ -68,9 +70,17 @@ export default function FormDialog() {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <IconButton 
+      variant="outlined"
+      onClick={handleClickOpen}
+      className={styles.buttons}
+     
+      >
+        <AddTaskIcon />
+      </IconButton>
+      {/* <Button variant="outlined" onClick={handleClickOpen}>
         Open form dialog
-      </Button>
+      </Button> */}
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
         <DialogTitle>Nova Tarefa</DialogTitle>
         <DialogContent>

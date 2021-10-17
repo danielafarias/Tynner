@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 const baseUrl = "https://tynnerapp.azurewebsites.net";
 
 export const register = async (
@@ -22,6 +23,8 @@ export const login = async (email: any, passwordHash: any) => {
     passwordHash,
   });
 };
+
+
 
 // export const forgotPassword = async (username) => {
 //   const response = await axios({

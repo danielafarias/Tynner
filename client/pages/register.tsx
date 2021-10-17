@@ -1,10 +1,23 @@
 import Header from "../components/Header";
-import { TextField, Typography, Button, Grid } from "@mui/material";
+import {
+  TextField,
+  Typography,
+  Button,
+  Grid,
+  Alert,
+  AlertTitle,
+  Stack,
+  Snackbar,
+  FormControl,
+  FormHelperText,
+} from "@mui/material";
+
 import React from "react";
 import styles from "../styles/Register.module.scss";
 import Footer from "../components/Footer";
 import { register } from "../api/Api";
 import { useRouter } from "next/router";
+import { useFormControl } from "@mui/material/FormControl";
 
 export default function Register() {
   const router = useRouter();
@@ -22,8 +35,13 @@ export default function Register() {
       await register(userName, email, passwordHash);
       router.push("/");
     } catch (err) {
-      console.error(err);
       setError(true);
+    }
+  };
+
+  const handleClose = () => {
+    {
+      return setError(false);
     }
   };
 
@@ -86,6 +104,7 @@ export default function Register() {
                 name="password"
                 value={passwordHash}
                 onChange={(e) => setPasswordHash(e.target.value)}
+                helperText="A senha deve conter letra maiúscula, minúscula, número e caracter especial."
               />
             </Grid>
             <Grid item>
@@ -99,6 +118,21 @@ export default function Register() {
               </Button>
             </Grid>
           </Grid>
+
+          {error == false ? null : (
+            <Stack spacing={2} sx={{ width: "100%" }}>
+              <Snackbar
+                open={error}
+                autoHideDuration={6000}
+                onClose={handleClose}
+              >
+                <Alert severity="error">
+                  Houve um erro ao registrar-se.{" "}
+                  <strong>Tente novamente!</strong>
+                </Alert>
+              </Snackbar>
+            </Stack>
+          )}
         </form>
       </main>
       <Footer />
