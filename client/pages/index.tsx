@@ -2,12 +2,22 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Index.module.scss";
 import Footer from "../components/Footer";
-import { Grid, Typography, Button, TextField } from "@mui/material";
+import {
+  Grid,
+  Typography,
+  Button,
+  TextField,
+  Stack,
+  Snackbar,
+  Alert
+} from "@mui/material";
 import React from "react";
 import { login } from "../api/Api";
 import { useRouter } from "next/router";
 
-const Home: NextPage = () => {
+
+
+ const Home: NextPage = () => {
 
   const [email, setEmail] = React.useState("");
   const [passwordHash, setPasswordHash] = React.useState("");
@@ -22,7 +32,7 @@ const Home: NextPage = () => {
     try {
       await login(email, passwordHash).then((response: any) => {
         localStorage.setItem("token", response.data);
-        console.log(response)
+        console.log(response);
       });
       router.push("/dashboard");
     } catch (err) {
@@ -31,7 +41,14 @@ const Home: NextPage = () => {
     }
   };
 
-  console.log(email, passwordHash)
+  console.log(error)
+
+  const handleClose = () => {
+    
+    setError(false);
+    
+  }
+  console.log(email, passwordHash);
 
   return (
     <div className={styles.all}>
@@ -68,9 +85,9 @@ const Home: NextPage = () => {
               alignItems="center"
               spacing={3}
             >
-              <Grid item xs={8} sm={4} className={styles.login__form__title} >
-                <Typography>
-                  <h1>Login</h1>
+              <Grid item xs={8} sm={4} className={styles.login__form__title}>
+                <Typography variant="h1" sx={{ fontSize: 40 }}>
+                  Login
                 </Typography>
               </Grid>
               <Grid item xs={8} sm={4} className={styles.login__textField}>
@@ -99,7 +116,6 @@ const Home: NextPage = () => {
                   label="Senha"
                   InputProps={{
                     disableUnderline: true,
-                   
                   }}
                   variant="filled"
                   type="password"
@@ -130,10 +146,16 @@ const Home: NextPage = () => {
               </Grid>
             </Grid>
           </form>
-
-       
-
-
+          <Stack spacing={2} sx={{ width: "100%" }}>
+            <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
+              <Alert
+                severity="error"
+                sx={{ width: "100%" }}
+              >
+                Ocorreu um erro ao tentar entrar, verifique seus dados e tente novamente!
+              </Alert>
+            </Snackbar>
+          </Stack>
         </div>
         <div id={styles.footer}></div>
       </main>

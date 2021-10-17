@@ -1,3 +1,4 @@
+import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Search from "../components/Search";
@@ -6,21 +7,74 @@ import LogoutButton from "../components/LogoutButton";
 import AddButton from "../components/AddButton";
 import InsertTask from "../components/InsertTask";
 import CardTodo from "../components/CardTodo";
-import { Grid } from "@mui/material";
+import {
+  Grid,
+  Skeleton,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Button,
+} from "@mui/material";
+import Typography, { TypographyProps } from "@mui/material/Typography";
+import { useRouter } from "next/router";
 
 export default function Dashboard() {
+  const [error, setError] = React.useState(true);
+  const router = useRouter();
+
+  const variants = [
+    "h1",
+    "h3",
+    "body1",
+    "caption",
+    "caption",
+  ] as readonly TypographyProps["variant"][];
+
+  const handleClick = () => {
+    router.push("/");
+  }
+
   return (
     <div className={styles.all}>
       <Header
-        searchBar={<Search />}
-        button1={<InsertTask />}
-        button2={<LogoutButton />}
+        searchBar={error === true ? "" : <Search />}
+        button1={error === true ? "" : <InsertTask />}
+        button2={error === true ? "" : <LogoutButton />}
       />
+      {error === true ? (
+        <div className={styles.skeleton}>
+          {variants.map((variant) => (
+            <Typography component="div" key={variant} variant={variant}>
+              {<Skeleton />}
+            </Typography>
+          ))}
 
-      <main className={styles.main}>
-        <CardTodo />
-      </main>
-
+          <Dialog
+            open={error}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+          >
+            <DialogTitle id="alert-dialog-title">
+              {"Notamos que você não está autenticado..."}
+            </DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-description">
+              Para acessar nossa plataforma é necessário estar cadastrado e autenticado,
+              clique para ser direcionado à página inicial.
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button variant="contained" sx={{ backgroundColor: "#58685d" }} onClick={handleClick}>Página Inicial</Button>
+            </DialogActions>
+          </Dialog>
+        </div>
+      ) : (
+        <main className={styles.main}>
+          <CardTodo />
+        </main>
+      )}
       <Footer />
     </div>
   );
