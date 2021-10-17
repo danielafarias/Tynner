@@ -136,3 +136,14 @@ div.MuiDialogActions-root {
   flex-direction: column;
   align-items: center;
 }
+
+div.MuiPaper-root.MuiAlert-root {
+  background-color: #ff6e40;
+  font-weight: bold;
+  text-align: center;
+  color: #d6f6dd;
+
+  svg {
+    color:#d6f6dd;
+  }
+}
