@@ -19,7 +19,6 @@ export default function TodoData() {
   // const [rows, setRows] = React.useState(initialRows);
   const [select, setSelect] = React.useState([]);
   const [tasks, setTasks] = React.useState("");
-  const [id, setId] = React.useState("");
 
   console.log(tasks);
 
@@ -58,9 +57,8 @@ export default function TodoData() {
         field: "priority",
         headerName: "Importância",
         width: 150,
-        type: "actions",
-        getActions: (params: GridRowParams) => [
-          <Rating name="read-only" value={params.id} readOnly />,
+        renderCell: (params: GridRenderCellParams) => [
+          <Rating name="read-only" value={params.value} />,
         ],
       },
       {
@@ -111,7 +109,7 @@ export default function TodoData() {
             todo: data.taskName,
             priority: data.priority,
             tag: data.task,
-            date: data.taskDate,
+            date: data.deadLine,
             actions: <DeleteIcon />,
           })) as GridRowModel[]
         }
