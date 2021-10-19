@@ -7,6 +7,7 @@ import LogoutButton from "../components/LogoutButton";
 import AddButton from "../components/AddButton";
 import InsertTask from "../components/InsertTask";
 import CardTodo from "../components/CardTodo";
+import CardDone from "../components/CardDone";
 import {
   Grid,
   Skeleton,
@@ -74,6 +75,7 @@ export default function Dashboard() {
       ) : (
         <main className={styles.main}>
           <CardTodo />
+          <CardDone />
         </main>
       )}
       <Footer />
