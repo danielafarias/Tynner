@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Chip } from "@mui/material";
+import { Chip, Rating } from "@mui/material";
 import {
   DataGrid,
   GridActionsCellItem,
@@ -33,15 +33,6 @@ export default function TodoData() {
   //   setSelect(e.map((ri: any) => rows[ri]));
   // };
 
-  // const deleteUser = React.useCallback(
-  //   (id: GridRowId) => () => {
-  //     setTimeout(() => {
-  //       setRows((prevRows) => prevRows.filter((row) => row.id !== id));
-  //     });
-  //   },
-  //   []
-  // );
-
   const deleteTasks = (id: any) => {
     deleteTask(id);
   }
@@ -59,24 +50,15 @@ export default function TodoData() {
         field: "priority",
         headerName: "Importância",
         width: 150,
-        editable: true,
-        type: "singleSelect",
-        valueOptions: ["Alta", "Média", "Baixa"],
-        renderCell: (params: GridRenderCellParams) => (
-          <Chip
-            icon={<BookmarkIcon />}
-            label={params.value}
-            variant="outlined"
-          />
-        ),
+        type: "actions",
+        getActions: (params: GridRowParams) => [
+          <Rating name="read-only" value={params.id} readOnly />
+        ]
       },
       {
         field: "tag",
         headerName: "TAG",
         width: 150,
-        editable: true,
-        type: "singleSelect",
-        valueOptions: ["Casa", "Lazer", "Pessoal", "Trabalho"],
         renderCell: (params: GridRenderCellParams) => (
           <Chip
             icon={<LoyaltyIcon />}

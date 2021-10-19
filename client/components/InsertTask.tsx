@@ -9,9 +9,19 @@ import DialogTitle from "@mui/material/DialogTitle";
 import styles from "../styles/InsertTask.module.scss";
 import Autocomplete from "@mui/material/Autocomplete";
 import { styled } from "@mui/material/styles";
-import { Grid, TextField, Paper, MenuItem, IconButton } from "@mui/material";
+import {
+  Grid,
+  TextField,
+  Paper,
+  MenuItem,
+  IconButton,
+  Box,
+  Rating,
+  Typography,
+} from "@mui/material";
 import { postTask } from "../api/Api";
 import AddTaskIcon from "@mui/icons-material/AddTask";
+import StarIcon from "@mui/icons-material/Star";
 
 const tags = [
   { value: "Casa", label: "Casa" },
@@ -32,6 +42,16 @@ export default function FormDialog() {
   const [tag, setTag] = React.useState("Casa");
   const [priority, setPriority] = React.useState(0);
   const [date, setDate] = React.useState("");
+  const [value, setValue] = React.useState<number>(0);
+  const [hover, setHover] = React.useState(-1);
+
+  const labels: { [index: string]: string } = {
+    1: "Não",
+    2: "Pouco",
+    3: "Mediano",
+    4: "Muito",
+    5: "Extremamente",
+  };
 
   const [error, setError] = React.useState(false);
 
@@ -55,7 +75,7 @@ export default function FormDialog() {
     event.preventDefault();
 
     try {
-      await postTask(task, tag, date, priority);
+      await postTask(task, tag, date, value);
       setOpen(false);
       window.location.reload();
       console.log("foi");
@@ -65,14 +85,11 @@ export default function FormDialog() {
     }
   };
 
-  console.log(task, tag, priority, date);
+  console.log(task, tag, value, date);
 
   return (
     <div>
-      <IconButton
-        onClick={handleClickOpen}
-        className={styles.buttons}
-      >
+      <IconButton onClick={handleClickOpen} className={styles.buttons}>
         <AddTaskIcon />
       </IconButton>
       {/* <Button variant="outlined" onClick={handleClickOpen}>
@@ -139,26 +156,35 @@ export default function FormDialog() {
                 ))}
               </TextField>
 
-              <TextField
-                margin="dense"
-                id="filled-select-currency"
-                select
-                //className={styles.field}
-                label="Priority"
-                InputProps={{
-                  disableUnderline: true,
+              <Box
+                sx={{
+                  width: 200,
+                  display: "flex",
+                  alignItems: "center",
+                  margin: 2,
                 }}
-                // value={priority}
-                // onChange={(e) => setPriority(e.target.value)}
-                variant="filled"
-                fullWidth
               >
-                {priorities.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </TextField>
+                <Typography component="legend" sx={{ marginRight: 2 }}>Importante: </Typography>
+                <Rating
+                  name="hover-feedback"
+                  value={value}
+                  precision={1}
+                  onChange={(event, newValue: number) => {
+                    setValue(newValue);
+                  }}
+                  onChangeActive={(event, newHover: number) => {
+                    setHover(newHover);
+                  }}
+                  emptyIcon={
+                    <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
+                  }
+                />
+                {value !== null && (
+                  <Box sx={{ ml: 2 }}>
+                    {labels[hover !== -1 ? hover : value]}
+                  </Box>
+                )}
+              </Box>
               <Button
                 className={styles.login__button}
                 variant="contained"
