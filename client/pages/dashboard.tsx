@@ -19,10 +19,12 @@ import {
 } from "@mui/material";
 import Typography, { TypographyProps } from "@mui/material/Typography";
 import { useRouter } from "next/router";
+import { getTasks } from "../api/Api";
 
 export default function Dashboard() {
   const [error, setError] = React.useState(false);
   const router = useRouter();
+ 
 
   const variants = [
     "h1",

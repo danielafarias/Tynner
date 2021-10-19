@@ -30,7 +30,7 @@ export default function FormDialog() {
   const [open, setOpen] = React.useState(false);
   const [task, setTask] = React.useState("");
   const [tag, setTag] = React.useState("Casa");
-  const [priority, setPriority] = React.useState("Alta");
+  const [priority, setPriority] = React.useState(0);
   const [date, setDate] = React.useState("");
 
   const [error, setError] = React.useState(false);
@@ -55,7 +55,7 @@ export default function FormDialog() {
     event.preventDefault();
 
     try {
-      await postTask(task, tag, priority, date);
+      await postTask(task, tag, date, priority);
       setOpen(false);
       window.location.reload();
       console.log("foi");
@@ -148,8 +148,8 @@ export default function FormDialog() {
                 InputProps={{
                   disableUnderline: true,
                 }}
-                value={priority}
-                onChange={(e) => setPriority(e.target.value)}
+                // value={priority}
+                // onChange={(e) => setPriority(e.target.value)}
                 variant="filled"
                 fullWidth
               >

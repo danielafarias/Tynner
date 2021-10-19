@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const baseUrl = "https://tynnerapp.azurewebsites.net";
+const baseUrl = "https://bluetodo20211015130137.azurewebsites.net/api";
 
 
 export const register = async (
@@ -11,7 +11,7 @@ export const register = async (
   name: any,
   phoneNumber: any
 ) => {
-  return await axios.post(baseUrl + "/api/Auth/Register", {
+  return await axios.post(baseUrl + "/Auth/Register", {
     userName,
     email,
     passwordHash,
@@ -19,13 +19,11 @@ export const register = async (
 };
 
 export const login = async (email: any, passwordHash: any) => {
-  return await axios.post(baseUrl + "/api/Auth/Token", {
+  return await axios.post(baseUrl + "/Auth/Token", {
     email,
     passwordHash,
   });
 };
-
-
 
 // export const forgotPassword = async (username) => {
 //   const response = await axios({
@@ -38,21 +36,19 @@ export const login = async (email: any, passwordHash: any) => {
 //   return response.data;
 // };
 
-export const postTask = async (tarefa: string, tag: string, prioridade: string, data_tarefa: string) => {
+export const postTask = async (taskName: string, task: string, taskDate: string, priority: number, ) => {
   return await axios({
     method: "post",
-    url: baseUrl + "/api/Tasks",
+    url: baseUrl + "/Todo",
     data: {
-      tarefa,
-      tag,
-      prioridade,
-      data_tarefa
+      taskName,
+      task,
+      taskDate,
+      priority
     },
-    withCredentials: true,
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Bearer " + localStorage.getItem("token"),
-      'Access-Control-Allow-Origin': '*',
+      Authorization: "Bearer " + localStorage.getItem("token")
     },
   });
 };
@@ -73,15 +69,15 @@ export const postTask = async (tarefa: string, tag: string, prioridade: string, 
 //   });
 // };
 
-// export const feed = async () => {
-//   const response = await axios({
-//     method: "get",
-//     url: baseUrl + "/feeds",
-//     headers: {
-//       "Content-Type": "application/json",
-//       Authorization: "Bearer " + localStorage.getItem("token"),
-//     },
-//   });
+export const getTasks = async () => {
+  const response = await axios({
+    method: "get",
+    url: baseUrl + "/Todo",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+  });
 
-//   return response.data;
-// };
+  return response.data;
+};
