@@ -21,8 +21,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Logo
 - [x] Protótipo no Figma
 - [x] Endpoints
-- [ ] Views
-- [ ] Consumo da API
+- [x] Views
+- [x] Consumo da API
 - [ ] Projeto Finalizado
 
 ## 🔗 Acesso aos repositórios
@@ -87,13 +87,7 @@ Em seguida, adicione as bibliotecas e dependências necessárias:
 <yarn install>
 ```
 ```
-<yarn add @mui/material>
-```
-```
-<yarn add axios>
-```
-```
-<yarn add @mui/icons-material>
+<yarn add next>
 ```
 ```
 <yarn add react>
@@ -102,8 +96,24 @@ Em seguida, adicione as bibliotecas e dependências necessárias:
 <yarn add react-dom>
 ```
 ```
-<yarn add next>
+<yarn add axios>
 ```
+```
+<yarn add @material-ui/core>
+```
+```
+<yarn add @mui/material>
+```
+```
+<yarn add @mui/icons-material>
+```
+```
+<yarn add @mui/styles>
+```
+```
+<yarn add @mui/x-data-grid@next>
+```
+
 
 ## 🗒 Usando `<Tynner>`
 
@@ -123,7 +133,7 @@ Voilà!
 Para contribuir com `<Tynner>`, siga estas etapas:
 
 1. Bifurque este repositório.
-2. Crie um branch: `git checkout -b <tynner_seu_nome>`.
+2. Crie um branch: `git checkout -b <tynner_seu_nome>`
 3. Faça suas alterações e confirme-as: `git commit -m '<sua_mensagem_de_commit>'`
 4. Envie para o branch original: `git push origin <master> / <https://github.com/danielafarias/Tynner>`
 5. Crie a solicitação de pull.
@@ -132,7 +142,7 @@ Como alternativa, consulte a documentação do GitHub em [como criar uma solicit
 
 ## 🤝 Colaboradores
 
-Seguintes pessoas que contribuíram para este projeto:
+Seguintes pessoas contribuíram para este projeto:
 
 <table>
   <tr>
@@ -148,7 +158,7 @@ Seguintes pessoas que contribuíram para este projeto:
       <a href="https://github.com/marcosdjr">
         <img src="https://avatars.githubusercontent.com/u/81446213?v=4" width="100px;" alt="Foto do Marcos Domingues no GitHub"/><br>
         <sub>
-          <b>Marcos D. Jr. [Front-end]</b>
+          <b>Marcos Domingues Jr. [Front-end]</b>
         </sub>
       </a>
     </td>
