@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ListIcon from "@mui/icons-material/List";
-import TodoData from "./TodoData";
+import DoneData from "./DoneData";
 
 export default function CardTodo() {
   return (
@@ -23,7 +23,7 @@ export default function CardTodo() {
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <TodoData />
+          <DoneData />
         </AccordionDetails>
       </Accordion>
     </div>

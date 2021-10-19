@@ -13,7 +13,7 @@ import LoyaltyIcon from "@mui/icons-material/Loyalty";
 import { getTasks, deleteTask } from "../api/Api";
 import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
 
-export default function TodoData() {
+export default function DoneData() {
   // const [rows, setRows] = React.useState(initialRows);
   const [select, setSelect] = React.useState([]);
   const [tasks, setTasks] = React.useState("");
@@ -28,7 +28,7 @@ export default function TodoData() {
 
   const responseData = Array.from(tasks);
 
-  const filteredData = responseData.filter((data: any) => data.status === false);
+  const filteredData = responseData.filter((data: any) => data.status === true);
 
   const handleRowSelection = (e: any) => {
     setSelect(e.target.value);
@@ -134,7 +134,6 @@ export default function TodoData() {
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
-        checkboxSelection
         disableSelectionOnClick
         onSelectionModelChange={() => handleRowSelection}
         components={{
