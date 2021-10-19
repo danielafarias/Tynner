@@ -54,6 +54,21 @@ export const postTask = async (taskName: string, task: string, deadLine: string,
   });
 };
 
+export const updateTask = async (idTask: any,  status: boolean, ) => {
+  return await axios({
+    method: "put",
+    url: baseUrl + "/Todo",
+    data: {
+      idTask,
+      status
+    },
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("token")
+    },
+  });
+};
+
 // export const reaction = async (feedId, like, love) => {
 //   return await axios({
 //     method: "post",
