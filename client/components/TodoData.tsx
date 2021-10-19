@@ -7,19 +7,20 @@ import {
   GridRowParams,
   GridRowModel,
   GridRenderCellParams,
+  GridOverlay,
 } from "@mui/x-data-grid";
 import DeleteIcon from "@mui/icons-material/Delete";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { getTasks, deleteTask } from "../api/Api";
+import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
 
 export default function TodoData() {
   // const [rows, setRows] = React.useState(initialRows);
   const [select, setSelect] = React.useState([]);
   const [tasks, setTasks] = React.useState("");
-  const [id, setId] = React.useState("");
 
-  console.log(tasks)
+  console.log(tasks);
 
   React.useEffect(() => {
     if (!tasks) {
@@ -31,18 +32,21 @@ export default function TodoData() {
 
   const handleRowSelection = (e: any) => {
     setSelect(e.target.value);
-
   };
 
-  console.log(select)
+  console.log(select);
 
   const deleteTasks = (id: any) => {
     deleteTask(id);
-  }
+    window.location.reload();
+  };
+
+  const CustomNoRowsOverlay = () => {
+    return <GridOverlay><PlaylistAddCheckIcon sx={{ marginRight: 1 }}/> Nenhuma tarefa </GridOverlay>;
+  };
 
   const columns = React.useMemo(
     () => [
-      
       {
         field: "todo",
         headerName: "Tarefas",
@@ -53,10 +57,9 @@ export default function TodoData() {
         field: "priority",
         headerName: "Importância",
         width: 150,
-        type: "actions",
-        getActions: (params: GridRowParams) => [
-          <Rating name="read-only" value={params.id} readOnly />
-        ]
+        renderCell: (params: GridRenderCellParams) => [
+          <Rating name="read-only" value={params.value} />,
+        ],
       },
       {
         field: "tag",
@@ -97,27 +100,29 @@ export default function TodoData() {
     console.log(select);
   }, [select]);
 
-  
   return (
     <div style={{ height: 400, width: "100%" }}>
       <DataGrid
-        rows={responseData.map((data: any) => ({ 
-          id: data.idTask,
-          todo: data.taskName,
-          priority: data.priority,
-          tag: data.task,
-          date: data.taskDate,
-          actions: <DeleteIcon />
-         })) as GridRowModel[]}
-         
+        rows={
+          responseData.map((data: any) => ({
+            id: data.idTask,
+            todo: data.taskName,
+            priority: data.priority,
+            tag: data.task,
+            date: data.deadLine,
+            actions: <DeleteIcon />,
+          })) as GridRowModel[]
+        }
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
         checkboxSelection
         disableSelectionOnClick
         onSelectionModelChange={() => handleRowSelection}
+        components={{
+          NoRowsOverlay: CustomNoRowsOverlay,
+        }}
       />
-      
     </div>
   );
 }
