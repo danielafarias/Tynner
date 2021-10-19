@@ -108,23 +108,22 @@ export default function TodoData() {
   
   return (
     <div style={{ height: 400, width: "100%" }}>
-      {responseData.map((data: any) => (
       <DataGrid
-        key={data.idTask}
-        rows={[{ 
+        rows={responseData.map((data: any) => ({ 
           id: data.idTask,
           todo: data.taskName,
           priority: data.priority,
           tag: data.task,
           date: data.taskDate
-         }] as GridRowModel[]}
+         })) as GridRowModel[]}
+         
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
         checkboxSelection
         disableSelectionOnClick
       />
-      ))}
+      
     </div>
   );
 }
