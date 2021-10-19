@@ -25,16 +25,17 @@ export const login = async (email: any, passwordHash: any) => {
   });
 };
 
-// export const forgotPassword = async (username) => {
-//   const response = await axios({
-//     method: "get",
-//     url: baseUrl + "/forgot-password/" + username,
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//   });
-//   return response.data;
-// };
+export const deleteTask = async (id: string) => {
+  const response = await axios({
+    method: "delete",
+    url: baseUrl + "/Todo/" + id,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("token")
+    },
+  });
+  return response.data;
+};
 
 export const postTask = async (taskName: string, task: string, taskDate: string, priority: number, ) => {
   return await axios({

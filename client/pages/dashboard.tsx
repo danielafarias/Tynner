@@ -41,7 +41,6 @@ export default function Dashboard() {
   return (
     <div className={styles.all}>
       <Header
-        searchBar={error === true ? "" : <Search />}
         button1={error === true ? "" : <InsertTask />}
         button2={error === true ? "" : <LogoutButton />}
       />

@@ -11,12 +11,13 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
-import { getTasks } from "../api/Api";
+import { getTasks, deleteTask } from "../api/Api";
 
 export default function TodoData() {
   // const [rows, setRows] = React.useState(initialRows);
   const [select, setSelect] = React.useState([]);
   const [tasks, setTasks] = React.useState("");
+  const [id, setId] = React.useState("");
 
   console.log(tasks)
 
@@ -40,6 +41,10 @@ export default function TodoData() {
   //   },
   //   []
   // );
+
+  const deleteTasks = (id: any) => {
+    deleteTask(id);
+  }
 
   const columns = React.useMemo(
     () => [
@@ -70,6 +75,8 @@ export default function TodoData() {
         headerName: "TAG",
         width: 150,
         editable: true,
+        type: "singleSelect",
+        valueOptions: ["Casa", "Lazer", "Pessoal", "Trabalho"],
         renderCell: (params: GridRenderCellParams) => (
           <Chip
             icon={<LoyaltyIcon />}
@@ -85,20 +92,20 @@ export default function TodoData() {
         width: 200,
         editable: true,
       },
-      // {
-      //   field: "actions",
-      //   type: "actions",
-      //   width: 80,
-      //   getActions: (params: GridRowParams) => [
-      //     <GridActionsCellItem
-      //       icon={<DeleteIcon />}
-      //       label="Delete"
-      //       onClick={deleteUser(params.id)}
-      //     />,
-      //   ],
-      // },
+      {
+        field: "actions",
+        type: "actions",
+        width: 80,
+        getActions: (params: GridRowParams) => [
+          <GridActionsCellItem
+            icon={<DeleteIcon />}
+            label="Delete"
+            onClick={() => deleteTasks(params.id)}
+          />,
+        ],
+      },
     ],
-    []
+    [deleteTask]
   );
 
   React.useEffect(() => {
@@ -114,7 +121,8 @@ export default function TodoData() {
           todo: data.taskName,
           priority: data.priority,
           tag: data.task,
-          date: data.taskDate
+          date: data.taskDate,
+          actions: <DeleteIcon />
          })) as GridRowModel[]}
          
         columns={columns}
