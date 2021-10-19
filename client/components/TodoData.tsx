@@ -1,9 +1,8 @@
 import * as React from "react";
-import { Chip, Rating } from "@mui/material";
+import { Chip, Rating, TextField } from "@mui/material";
 import {
   DataGrid,
   GridActionsCellItem,
-  GridRowId,
   GridRowParams,
   GridRowModel,
   GridRenderCellParams,
@@ -11,9 +10,8 @@ import {
 } from "@mui/x-data-grid";
 import DeleteIcon from "@mui/icons-material/Delete";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
-import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { getTasks, deleteTask } from "../api/Api";
-import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
+import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
 
 export default function TodoData() {
   // const [rows, setRows] = React.useState(initialRows);
@@ -24,11 +22,13 @@ export default function TodoData() {
 
   React.useEffect(() => {
     if (!tasks) {
-      getTasks().then((res) => setTasks(res));
+      getTasks().then((res: any) => setTasks(res));
     }
   }, [tasks]);
 
   const responseData = Array.from(tasks);
+
+  const data = responseData.filter((data) => Boolean(data.status));
 
   const handleRowSelection = (e: any) => {
     setSelect(e.target.value);
@@ -42,7 +42,11 @@ export default function TodoData() {
   };
 
   const CustomNoRowsOverlay = () => {
-    return <GridOverlay><PlaylistAddCheckIcon sx={{ marginRight: 1 }}/> Nenhuma tarefa </GridOverlay>;
+    return (
+      <GridOverlay>
+        <PlaylistAddCheckIcon sx={{ marginRight: 1 }} /> Nenhuma tarefa{" "}
+      </GridOverlay>
+    );
   };
 
   const columns = React.useMemo(
@@ -51,14 +55,13 @@ export default function TodoData() {
         field: "todo",
         headerName: "Tarefas",
         width: 250,
-        editable: true,
       },
       {
         field: "priority",
         headerName: "Importância",
         width: 150,
         renderCell: (params: GridRenderCellParams) => [
-          <Rating name="read-only" value={params.value} />,
+          <Rating name="read-only" value={params.value} readOnly />,
         ],
       },
       {
@@ -78,7 +81,22 @@ export default function TodoData() {
         headerName: "Data",
         type: "dateTime",
         width: 200,
-        editable: true,
+        cellClassName: "font-tabular-nums",
+        renderCell: (params: GridRenderCellParams) => (
+          <TextField
+            variant="standard"
+            type="date"
+            value={params.value.replace(/(\d*)-(\d*)-(\d*).*/, "$1-$2-$3")}
+            defaultValue={params.value.replace(
+              /(\d*)-(\d*)-(\d*).*/,
+              "$1-$2-$3"
+            )}
+            InputProps={{
+              disableUnderline: true,
+            }}
+            disabled
+          />
+        ),
       },
       {
         field: "actions",

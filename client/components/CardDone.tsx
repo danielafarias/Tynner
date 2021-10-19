@@ -19,7 +19,7 @@ export default function CardTodo() {
           id="panel1a-header"
         >
           <Typography variant="h5">
-            <ListIcon /> Tarefas a fazer
+            <ListIcon /> Tarefas feitas
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
