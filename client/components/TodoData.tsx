@@ -1,22 +1,26 @@
 import * as React from "react";
-import { Chip, Rating, TextField } from "@mui/material";
+import { Chip, Rating, TextField, Checkbox, IconButton } from "@mui/material";
 import {
   DataGrid,
-  GridActionsCellItem,
   GridRowParams,
   GridRowModel,
   GridRenderCellParams,
   GridOverlay,
+  GridActionsCellItem,
 } from "@mui/x-data-grid";
 import DeleteIcon from "@mui/icons-material/Delete";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
-import { getTasks, deleteTask } from "../api/Api";
+import { getTasks, deleteTask, updateTask } from "../api/Api";
 import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
+import TaskAltIcon from '@mui/icons-material/TaskAlt';
 
 export default function TodoData() {
   // const [rows, setRows] = React.useState(initialRows);
   const [select, setSelect] = React.useState([]);
   const [tasks, setTasks] = React.useState("");
+
+  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
 
   console.log(tasks);
 
@@ -30,14 +34,18 @@ export default function TodoData() {
 
   const filteredData = responseData.filter((data: any) => data.status === false);
 
-  const handleRowSelection = (e: any) => {
-    setSelect(e.target.value);
-  };
-
   console.log(select);
 
   const deleteTasks = (id: any) => {
     deleteTask(id);
+    window.location.reload();
+  };
+
+
+
+  const putTasks = (props: any) => {
+    const done = true;
+    updateTask(props, done);
     window.location.reload();
   };
 
@@ -51,6 +59,14 @@ export default function TodoData() {
 
   const columns = React.useMemo(
     () => [
+      {
+        field: "check",
+        type: "actions",
+        width: 80,
+        getActions: (params: GridRowParams) => [
+          <IconButton {...label} onClick={() => putTasks(params.id)}><TaskAltIcon/></IconButton>,
+        ],
+      },
       {
         field: "todo",
         headerName: "Tarefas",
@@ -134,9 +150,7 @@ export default function TodoData() {
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}
-        checkboxSelection
         disableSelectionOnClick
-        onSelectionModelChange={() => handleRowSelection}
         components={{
           NoRowsOverlay: CustomNoRowsOverlay,
         }}
