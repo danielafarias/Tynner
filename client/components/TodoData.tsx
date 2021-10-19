@@ -29,9 +29,12 @@ export default function TodoData() {
 
   const responseData = Array.from(tasks);
 
-  // const handleRowSelection = (e: any) => {
-  //   setSelect(e.map((ri: any) => rows[ri]));
-  // };
+  const handleRowSelection = (e: any) => {
+    setSelect(e.target.value);
+
+  };
+
+  console.log(select)
 
   const deleteTasks = (id: any) => {
     deleteTask(id);
@@ -112,6 +115,7 @@ export default function TodoData() {
         rowsPerPageOptions={[5]}
         checkboxSelection
         disableSelectionOnClick
+        onSelectionModelChange={() => handleRowSelection}
       />
       
     </div>
