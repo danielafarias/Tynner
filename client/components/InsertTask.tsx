@@ -161,10 +161,10 @@ export default function FormDialog() {
                   width: 200,
                   display: "flex",
                   alignItems: "center",
-                  margin: 2,
+                  margin: 1.5,
                 }}
               >
-                <Typography component="legend" sx={{ marginRight: 2 }}>Importante: </Typography>
+                <Typography component="legend" sx={{ marginRight: 1.5 }}>Importante: </Typography>
                 <Rating
                   name="hover-feedback"
                   value={value}
