@@ -37,14 +37,14 @@ export const deleteTask = async (id: string) => {
   return response.data;
 };
 
-export const postTask = async (taskName: string, task: string, taskDate: string, priority: number, ) => {
+export const postTask = async (taskName: string, task: string, deadLine: string, priority: number, ) => {
   return await axios({
     method: "post",
     url: baseUrl + "/Todo",
     data: {
       taskName,
       task,
-      taskDate,
+      deadLine,
       priority
     },
     headers: {
