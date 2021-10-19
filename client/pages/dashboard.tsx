@@ -21,7 +21,7 @@ import Typography, { TypographyProps } from "@mui/material/Typography";
 import { useRouter } from "next/router";
 
 export default function Dashboard() {
-  const [error, setError] = React.useState(true);
+  const [error, setError] = React.useState(false);
   const router = useRouter();
 
   const variants = [

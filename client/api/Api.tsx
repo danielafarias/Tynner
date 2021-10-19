@@ -3,6 +3,7 @@ import axios from "axios";
 
 const baseUrl = "https://tynnerapp.azurewebsites.net";
 
+
 export const register = async (
   userName: any,
   email: any,
@@ -37,18 +38,21 @@ export const login = async (email: any, passwordHash: any) => {
 //   return response.data;
 // };
 
-export const postTask = async (tarefa: any, prioridade: any, data_tarefa: any) => {
+export const postTask = async (tarefa: string, tag: string, prioridade: string, data_tarefa: string) => {
   return await axios({
     method: "post",
     url: baseUrl + "/api/Tasks",
     data: {
       tarefa,
+      tag,
       prioridade,
       data_tarefa
     },
+    withCredentials: true,
     headers: {
       "Content-Type": "application/json",
       Authorization: "Bearer " + localStorage.getItem("token"),
+      'Access-Control-Allow-Origin': '*',
     },
   });
 };

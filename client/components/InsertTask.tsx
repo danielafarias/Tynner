@@ -11,8 +11,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import { styled } from "@mui/material/styles";
 import { Grid, TextField, Paper, MenuItem, IconButton } from "@mui/material";
 import { postTask } from "../api/Api";
-import AddTaskIcon from '@mui/icons-material/AddTask';
-
+import AddTaskIcon from "@mui/icons-material/AddTask";
 
 const tags = [
   { value: "Casa", label: "Casa" },
@@ -56,7 +55,7 @@ export default function FormDialog() {
     event.preventDefault();
 
     try {
-      await postTask(task, priority, date);
+      await postTask(task, tag, priority, date);
       setOpen(false);
       window.location.reload();
       console.log("foi");
@@ -66,15 +65,13 @@ export default function FormDialog() {
     }
   };
 
-  console.log(task, priority, date);
+  console.log(task, tag, priority, date);
 
   return (
     <div>
-      <IconButton 
-      variant="outlined"
-      onClick={handleClickOpen}
-      className={styles.buttons}
-     
+      <IconButton
+        onClick={handleClickOpen}
+        className={styles.buttons}
       >
         <AddTaskIcon />
       </IconButton>
