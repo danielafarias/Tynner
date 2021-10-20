@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Chip, Rating, TextField, Checkbox, IconButton } from "@mui/material";
+import { Chip, Rating, TextField, IconButton } from "@mui/material";
 import {
   DataGrid,
   GridRowParams,
@@ -12,15 +12,12 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
 import { getTasks, deleteTask, updateTask } from "../api/Api";
 import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
-import TaskAltIcon from '@mui/icons-material/TaskAlt';
+import TaskAltIcon from "@mui/icons-material/TaskAlt";
 
 export default function TodoData() {
-  // const [rows, setRows] = React.useState(initialRows);
-  const [select, setSelect] = React.useState([]);
   const [tasks, setTasks] = React.useState("");
 
-  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-
+  const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
   console.log(tasks);
 
@@ -32,16 +29,14 @@ export default function TodoData() {
 
   const responseData = Array.from(tasks);
 
-  const filteredData = responseData.filter((data: any) => data.status === false);
-
-  console.log(select);
+  const filteredData = responseData.filter(
+    (data: any) => data.status === false
+  );
 
   const deleteTasks = (id: any) => {
     deleteTask(id);
     window.location.reload();
   };
-
-
 
   const putTasks = (props: any) => {
     const done = true;
@@ -64,7 +59,9 @@ export default function TodoData() {
         type: "actions",
         width: 80,
         getActions: (params: GridRowParams) => [
-          <IconButton {...label} onClick={() => putTasks(params.id)}><TaskAltIcon/></IconButton>,
+          <IconButton {...label} onClick={() => putTasks(params.id)}>
+            <TaskAltIcon />
+          </IconButton>,
         ],
       },
       {
@@ -129,10 +126,6 @@ export default function TodoData() {
     ],
     [deleteTask]
   );
-
-  React.useEffect(() => {
-    console.log(select);
-  }, [select]);
 
   return (
     <div style={{ height: 400, width: "100%" }}>

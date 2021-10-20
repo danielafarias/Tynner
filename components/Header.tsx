@@ -5,7 +5,7 @@ import Head from "next/head";
 export default function Header(props: any) {
   return (
     <header className={styles.grow}>
-       <Head>
+      <Head>
         <title>Tynner</title>
         <meta name="Tynner" content="Tynner - Seu planner vintage" />
         <link rel="icon" href="images/icon.svg"></link>

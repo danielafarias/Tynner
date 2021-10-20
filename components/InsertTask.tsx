@@ -1,18 +1,11 @@
 import React from "react";
 import Button from "@mui/material/Button";
-
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
 import styles from "../styles/InsertTask.module.scss";
-import Autocomplete from "@mui/material/Autocomplete";
-import { styled } from "@mui/material/styles";
 import {
-  Grid,
+  Dialog,
+  DialogContent,
+  DialogTitle,
   TextField,
-  Paper,
   MenuItem,
   IconButton,
   Box,
@@ -30,17 +23,10 @@ const tags = [
   { value: "Trabalho", label: "Trabalho" },
 ];
 
-const priorities = [
-  { value: "Alta", label: "Alta" },
-  { value: "Média", label: "Média" },
-  { value: "Baixa", label: "Baixa" },
-];
-
 export default function FormDialog() {
   const [open, setOpen] = React.useState(false);
   const [task, setTask] = React.useState("");
   const [tag, setTag] = React.useState("Casa");
-  const [priority, setPriority] = React.useState(0);
   const [date, setDate] = React.useState("");
   const [value, setValue] = React.useState<number>(0);
   const [hover, setHover] = React.useState(-1);
@@ -53,8 +39,6 @@ export default function FormDialog() {
     5: "Extremamente",
   };
 
-  const [error, setError] = React.useState(false);
-
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -63,14 +47,6 @@ export default function FormDialog() {
     setOpen(false);
   };
 
-  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   setTag(event.target.value);
-  // };
-
-  // const handleChangeP = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //   setPriority(event.target.value);
-  // };
-
   const submitHandler = async (event: any) => {
     event.preventDefault();
 
@@ -78,23 +54,16 @@ export default function FormDialog() {
       await postTask(task, tag, date, value);
       setOpen(false);
       window.location.reload();
-      console.log("foi");
     } catch (err) {
       console.error(err);
-      setError(true);
     }
   };
-
-  console.log(task, tag, value, date);
 
   return (
     <div>
       <IconButton onClick={handleClickOpen} className={styles.buttons}>
         <AddTaskIcon />
       </IconButton>
-      {/* <Button variant="outlined" onClick={handleClickOpen}>
-        Open form dialog
-      </Button> */}
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
         <DialogTitle>Nova Tarefa</DialogTitle>
         <DialogContent>
@@ -103,7 +72,6 @@ export default function FormDialog() {
               <TextField
                 required
                 margin="dense"
-                //className={styles.field}
                 label="Tarefa"
                 InputProps={{
                   disableUnderline: true,
@@ -117,7 +85,6 @@ export default function FormDialog() {
               />
 
               <TextField
-                //className={styles.field}
                 margin="dense"
                 required
                 label="Data"
@@ -139,7 +106,6 @@ export default function FormDialog() {
               <TextField
                 select
                 margin="dense"
-                //className={styles.field}
                 label="Tag"
                 InputProps={{
                   disableUnderline: true,
@@ -164,15 +130,17 @@ export default function FormDialog() {
                   margin: 1.5,
                 }}
               >
-                <Typography component="legend" sx={{ marginRight: 1.5 }}>Importante: </Typography>
+                <Typography component="legend" sx={{ marginRight: 1.5 }}>
+                  Importante:{" "}
+                </Typography>
                 <Rating
                   name="hover-feedback"
                   value={value}
                   precision={1}
-                  onChange={(event, newValue: number) => {
+                  onChange={(newValue: number) => {
                     setValue(newValue);
                   }}
-                  onChangeActive={(event, newHover: number) => {
+                  onChangeActive={(newHover: number) => {
                     setHover(newHover);
                   }}
                   emptyIcon={

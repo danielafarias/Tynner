@@ -2,20 +2,18 @@ import * as React from "react";
 import { Chip, Rating, TextField } from "@mui/material";
 import {
   DataGrid,
-  GridActionsCellItem,
   GridRowParams,
   GridRowModel,
   GridRenderCellParams,
   GridOverlay,
+  GridActionsCellItem,
 } from "@mui/x-data-grid";
 import DeleteIcon from "@mui/icons-material/Delete";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
 import { getTasks, deleteTask } from "../api/Api";
 import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheck";
 
-export default function DoneData() {
-  // const [rows, setRows] = React.useState(initialRows);
-  const [select, setSelect] = React.useState([]);
+export default function TodoData() {
   const [tasks, setTasks] = React.useState("");
 
   console.log(tasks);
@@ -29,12 +27,6 @@ export default function DoneData() {
   const responseData = Array.from(tasks);
 
   const filteredData = responseData.filter((data: any) => data.status === true);
-
-  const handleRowSelection = (e: any) => {
-    setSelect(e.target.value);
-  };
-
-  console.log(select);
 
   const deleteTasks = (id: any) => {
     deleteTask(id);
@@ -114,10 +106,6 @@ export default function DoneData() {
     [deleteTask]
   );
 
-  React.useEffect(() => {
-    console.log(select);
-  }, [select]);
-
   return (
     <div style={{ height: 400, width: "100%" }}>
       <DataGrid
@@ -135,7 +123,6 @@ export default function DoneData() {
         pageSize={5}
         rowsPerPageOptions={[5]}
         disableSelectionOnClick
-        onSelectionModelChange={() => handleRowSelection}
         components={{
           NoRowsOverlay: CustomNoRowsOverlay,
         }}

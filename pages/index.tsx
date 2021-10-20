@@ -9,16 +9,13 @@ import {
   TextField,
   Stack,
   Snackbar,
-  Alert
+  Alert,
 } from "@mui/material";
 import React from "react";
 import { login } from "../api/Api";
 import { useRouter } from "next/router";
 
-
-
- const Home: NextPage = () => {
-
+const Home: NextPage = () => {
   const [email, setEmail] = React.useState("");
   const [passwordHash, setPasswordHash] = React.useState("");
 
@@ -41,13 +38,11 @@ import { useRouter } from "next/router";
     }
   };
 
-  console.log(error)
+  console.log(error);
 
   const handleClose = () => {
-    
     setError(false);
-    
-  }
+  };
   console.log(email, passwordHash);
 
   return (
@@ -98,15 +93,12 @@ import { useRouter } from "next/router";
                   InputProps={{
                     disableUnderline: true,
                     fullWidth: true,
-                    // endAdornment: <EmailIcon style={ color: '#673ab7', margin: 12 } />,
                   }}
                   variant="filled"
                   type="email"
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  // inputStyle={{width: '100%'}}
-
                   fullWidth
                 />
               </Grid>
@@ -124,7 +116,6 @@ import { useRouter } from "next/router";
                   value={passwordHash}
                   onChange={(e) => setPasswordHash(e.target.value)}
                   fullWidth
-                  // type={values.showPassword ? 'text' : 'password'}
                 />
               </Grid>
 
@@ -148,12 +139,14 @@ import { useRouter } from "next/router";
             </Grid>
           </form>
           <Stack spacing={2} sx={{ width: "100%" }}>
-            <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
-              <Alert
-                severity="error"
-                sx={{ width: "100%" }}
-              >
-                Ocorreu um erro ao tentar entrar, verifique seus dados e tente novamente!
+            <Snackbar
+              open={error}
+              autoHideDuration={6000}
+              onClose={handleClose}
+            >
+              <Alert severity="error" sx={{ width: "100%" }}>
+                Ocorreu um erro ao tentar entrar, verifique seus dados e tente
+                novamente!
               </Alert>
             </Snackbar>
           </Stack>

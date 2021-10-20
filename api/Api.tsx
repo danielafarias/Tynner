@@ -1,15 +1,11 @@
 import axios from "axios";
 
-
 const baseUrl = "https://bluetodo20211015130137.azurewebsites.net/api";
 
-
 export const register = async (
-  userName: any,
-  email: any,
-  passwordHash: any,
-  name: any,
-  phoneNumber: any
+  userName: string,
+  email: string,
+  passwordHash: string
 ) => {
   return await axios.post(baseUrl + "/Auth/Register", {
     userName,
@@ -18,7 +14,7 @@ export const register = async (
   });
 };
 
-export const login = async (email: any, passwordHash: any) => {
+export const login = async (email: string, passwordHash: string) => {
   return await axios.post(baseUrl + "/Auth/Token", {
     email,
     passwordHash,
@@ -31,13 +27,18 @@ export const deleteTask = async (id: string) => {
     url: baseUrl + "/Todo/" + id,
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Bearer " + localStorage.getItem("token")
+      Authorization: "Bearer " + localStorage.getItem("token"),
     },
   });
   return response.data;
 };
 
-export const postTask = async (taskName: string, task: string, deadLine: string, priority: number, ) => {
+export const postTask = async (
+  taskName: string,
+  task: string,
+  deadLine: string,
+  priority: number
+) => {
   return await axios({
     method: "post",
     url: baseUrl + "/Todo",
@@ -45,45 +46,29 @@ export const postTask = async (taskName: string, task: string, deadLine: string,
       taskName,
       task,
       deadLine,
-      priority
+      priority,
     },
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Bearer " + localStorage.getItem("token")
+      Authorization: "Bearer " + localStorage.getItem("token"),
     },
   });
 };
 
-export const updateTask = async (idTask: any,  status: boolean, ) => {
+export const updateTask = async (idTask: any, status: boolean) => {
   return await axios({
     method: "put",
     url: baseUrl + "/Todo",
     data: {
       idTask,
-      status
+      status,
     },
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Bearer " + localStorage.getItem("token")
+      Authorization: "Bearer " + localStorage.getItem("token"),
     },
   });
 };
-
-// export const reaction = async (feedId, like, love) => {
-//   return await axios({
-//     method: "post",
-//     url: baseUrl + "/reaction",
-//     data: {
-//       feedId,
-//       like,
-//       love,
-//     },
-//     headers: {
-//       "Content-Type": "application/json",
-//       Authorization: "Bearer " + localStorage.getItem("token"),
-//     },
-//   });
-// };
 
 export const getTasks = async () => {
   const response = await axios({

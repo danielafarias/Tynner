@@ -17,7 +17,6 @@ import styles from "../styles/Register.module.scss";
 import Footer from "../components/Footer";
 import { register } from "../api/Api";
 import { useRouter } from "next/router";
-import { useFormControl } from "@mui/material/FormControl";
 
 export default function Register() {
   const router = useRouter();

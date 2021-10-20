@@ -1,15 +1,12 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Search from "../components/Search";
 import styles from "../styles/Dashboard.module.scss";
 import LogoutButton from "../components/LogoutButton";
-import AddButton from "../components/AddButton";
 import InsertTask from "../components/InsertTask";
 import CardTodo from "../components/CardTodo";
 import CardDone from "../components/CardDone";
 import {
-  Grid,
   Skeleton,
   Dialog,
   DialogActions,
@@ -20,12 +17,10 @@ import {
 } from "@mui/material";
 import Typography, { TypographyProps } from "@mui/material/Typography";
 import { useRouter } from "next/router";
-import { getTasks } from "../api/Api";
 
 export default function Dashboard() {
   const [error, setError] = React.useState(false);
   const router = useRouter();
- 
 
   const variants = [
     "h1",
@@ -37,7 +32,7 @@ export default function Dashboard() {
 
   const handleClick = () => {
     router.push("/");
-  }
+  };
 
   return (
     <div className={styles.all}>
@@ -63,12 +58,18 @@ export default function Dashboard() {
             </DialogTitle>
             <DialogContent>
               <DialogContentText id="alert-dialog-description">
-              Para acessar nossa plataforma é necessário estar cadastrado e autenticado,
-              clique para ser direcionado à página inicial.
+                Para acessar nossa plataforma é necessário estar cadastrado e
+                autenticado, clique para ser direcionado à página inicial.
               </DialogContentText>
             </DialogContent>
             <DialogActions>
-              <Button variant="contained" sx={{ backgroundColor: "#58685d" }} onClick={handleClick}>Página Inicial</Button>
+              <Button
+                variant="contained"
+                sx={{ backgroundColor: "#58685d" }}
+                onClick={handleClick}
+              >
+                Página Inicial
+              </Button>
             </DialogActions>
           </Dialog>
         </div>
