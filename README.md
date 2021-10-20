@@ -81,9 +81,6 @@ Em seguida, adicione as bibliotecas e dependências necessárias:
 <cd Tynner>
 ```
 ```
-<cd client>
-```
-```
 <yarn install>
 ```
 ```
