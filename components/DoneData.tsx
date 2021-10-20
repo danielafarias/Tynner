@@ -53,7 +53,7 @@ export default function TodoData() {
         headerName: "Importância",
         width: 150,
         renderCell: (params: GridRenderCellParams) => [
-          <Rating name="read-only" value={params.value} readOnly />,
+          <Rating name="read-only" value={Number(params.value)} readOnly />,
         ],
       },
       {
